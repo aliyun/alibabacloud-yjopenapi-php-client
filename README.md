@@ -12,7 +12,7 @@ PHP 5.5 and later
 
 To install the bindings via Composer:
 ```
-composer require aliyun/alibabacloud-yjopenapi-php-client 1.0.20221015-beta
+composer require alibabacloud/alibabacloud-yjopenapi-php-client 1.0.20221015-beta
 ```
 
 Then run `composer install`

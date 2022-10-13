@@ -1,5 +1,5 @@
 {
-    "name": "aliyun/alibabacloud-yjopenapi-php-client",
+    "name": "alibabacloud/alibabacloud-yjopenapi-php-client",
     "description": "YuanJing OpenAPI SDK for PHP",
     "keywords": [
         "yuanjing",
@@ -13,7 +13,7 @@
     "authors": [
         {
             "name": "yuanjing-sdk-team",
-            "homepage": "https://github.com/aliyun/alibabacloud-yjopenapi-php-client"
+            "homepage": "https://github.com/alibabacloud/alibabacloud-yjopenapi-php-client"
         }
     ],
     "require": {
