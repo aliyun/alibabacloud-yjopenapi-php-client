@@ -475,12 +475,6 @@ class DispatchApi
      */
     protected function getStockRequest($varForms)
     {
-        // verify the required parameter 'game_id' is set
-        if ($varForms['game_id'] === null || (is_array($varForms['game_id']) && count($varForms['game_id']) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $varForms[\'game_id\'] when calling getStock'
-            );
-        }
         // verify the required parameter 'app_key' is set
         if ($varForms['app_key'] === null || (is_array($varForms['app_key']) && count($varForms['app_key']) === 0)) {
             throw new \InvalidArgumentException(
@@ -501,7 +495,9 @@ class DispatchApi
         $httpBody = '';
 
         // form params
-        $formParams['gameId'] = ObjectSerializer::toFormValue($varForms['game_id']);
+        if ($varForms['game_id'] !== null) {
+            $formParams['gameId'] = ObjectSerializer::toFormValue($varForms['game_id']);
+        }
         $formParams['appKey'] = ObjectSerializer::toFormValue($varForms['app_key']);
         $formParams['type'] = ObjectSerializer::toFormValue($varForms['type']);
 
