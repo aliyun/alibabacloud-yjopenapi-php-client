@@ -145,6 +145,11 @@ class ObjectSerializer
     {
         if (is_bool($value)) {
             return self::serializeBool((bool)$value);
+        } elseif (is_array($value)) {
+            foreach ($value as $p => $v) {
+                $value[$p] = self::sanitizeForSerialization($v);
+            }
+            return json_encode($value);
         } elseif ($value instanceof \DateTime) {
             return ($format === 'date') ? $value->format('Y-m-d') : $value->format('Y-m-dTH:i:sZ');
         } else {

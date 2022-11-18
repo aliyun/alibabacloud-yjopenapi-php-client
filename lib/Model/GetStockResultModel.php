@@ -51,7 +51,7 @@ class GetStockResultModel implements ModelInterface, ArrayAccess
 'success' => 'bool',
 'project_id' => 'string',
 'game_id' => 'string',
-'current_time' => 'string',
+'current_time' => 'int',
 'quota_total' => 'int',
 'used_total' => 'int',
 'available_total' => 'int',
@@ -69,7 +69,7 @@ class GetStockResultModel implements ModelInterface, ArrayAccess
 'success' => null,
 'project_id' => null,
 'game_id' => null,
-'current_time' => null,
+'current_time' => 'int64',
 'quota_total' => null,
 'used_total' => null,
 'available_total' => null,
@@ -369,7 +369,7 @@ class GetStockResultModel implements ModelInterface, ArrayAccess
     /**
      * Gets current_time
      *
-     * @return string
+     * @return int
      */
     public function getCurrentTime()
     {
@@ -379,7 +379,7 @@ class GetStockResultModel implements ModelInterface, ArrayAccess
     /**
      * Sets current_time
      *
-     * @param string $current_time 当前毫秒时间戳
+     * @param int $current_time 当前毫秒时间戳
      *
      * @return $this
      */

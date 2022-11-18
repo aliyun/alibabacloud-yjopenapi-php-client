@@ -8,12 +8,12 @@
         "sdk",
         "api"
     ],
-    "homepage": "https://www.yuangjinio.com",
+    "homepage": "https://www.yuanjingio.com",
     "license": "Apache-2.0",
     "authors": [
         {
             "name": "yuanjing-sdk-team",
-            "homepage": "https://github.com/alibabacloud/alibabacloud-yjopenapi-php-client"
+            "homepage": "https://github.com/aliyun/alibabacloud-yjopenapi-php-client"
         }
     ],
     "require": {

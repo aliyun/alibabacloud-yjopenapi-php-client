@@ -1,6 +1,6 @@
 <?php
 /**
- * GetStopGameTokenResultModel
+ * LiveStartGameLiveForms
  *
  * PHP version 5
  *
@@ -23,12 +23,12 @@ use \ArrayAccess;
 use \Yjopenapi\Client\Api\ObjectSerializer;
 
 /**
- * GetStopGameTokenResultModel Class Doc Comment
+ * LiveStartGameLiveForms Class Doc Comment
  *
  * @category Class
  * @package  Yjopenapi\Client
  */
-class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
+class LiveStartGameLiveForms implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -37,7 +37,7 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $serialModelName = 'GetStopGameTokenResultModel';
+    protected static $serialModelName = 'LiveStartGameLiveForms';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -45,12 +45,11 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $serialTypes = [
-        'request_id' => 'string',
-'token' => 'string',
-'expire_time' => 'int',
-'code' => 'string',
-'message' => 'string',
-'success' => 'bool'    ];
+        'app_key' => 'string',
+'game_session' => 'string',
+'server_url' => 'string',
+'stream_key' => 'string',
+'config' => '\Yjopenapi\Client\Model\LiveStartGameLiveConfig'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -58,12 +57,11 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $serialFormats = [
-        'request_id' => null,
-'token' => null,
-'expire_time' => 'int64',
-'code' => null,
-'message' => null,
-'success' => null    ];
+        'app_key' => null,
+'game_session' => null,
+'server_url' => null,
+'stream_key' => null,
+'config' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -92,12 +90,11 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'request_id' => 'requestId',
-'token' => 'token',
-'expire_time' => 'expireTime',
-'code' => 'code',
-'message' => 'message',
-'success' => 'success'    ];
+        'app_key' => 'appKey',
+'game_session' => 'gameSession',
+'server_url' => 'serverUrl',
+'stream_key' => 'streamKey',
+'config' => 'config'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -105,12 +102,11 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'request_id' => 'setRequestId',
-'token' => 'setToken',
-'expire_time' => 'setExpireTime',
-'code' => 'setCode',
-'message' => 'setMessage',
-'success' => 'setSuccess'    ];
+        'app_key' => 'setAppKey',
+'game_session' => 'setGameSession',
+'server_url' => 'setServerUrl',
+'stream_key' => 'setStreamKey',
+'config' => 'setConfig'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -118,12 +114,11 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'request_id' => 'getRequestId',
-'token' => 'getToken',
-'expire_time' => 'getExpireTime',
-'code' => 'getCode',
-'message' => 'getMessage',
-'success' => 'getSuccess'    ];
+        'app_key' => 'getAppKey',
+'game_session' => 'getGameSession',
+'server_url' => 'getServerUrl',
+'stream_key' => 'getStreamKey',
+'config' => 'getConfig'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -183,155 +178,130 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['request_id'] = isset($data['request_id']) ? $data['request_id'] : null;
-        $this->container['token'] = isset($data['token']) ? $data['token'] : null;
-        $this->container['expire_time'] = isset($data['expire_time']) ? $data['expire_time'] : null;
-        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
+        $this->container['app_key'] = isset($data['app_key']) ? $data['app_key'] : null;
+        $this->container['game_session'] = isset($data['game_session']) ? $data['game_session'] : null;
+        $this->container['server_url'] = isset($data['server_url']) ? $data['server_url'] : null;
+        $this->container['stream_key'] = isset($data['stream_key']) ? $data['stream_key'] : null;
+        $this->container['config'] = isset($data['config']) ? $data['config'] : null;
     }
 
 
     /**
-     * Gets request_id
+     * Gets app_key
      *
      * @return string
      */
-    public function getRequestId()
+    public function getAppKey()
     {
-        return $this->container['request_id'];
+        return $this->container['app_key'];
     }
 
     /**
-     * Sets request_id
+     * Sets app_key
      *
-     * @param string $request_id 请求链路唯一标示
+     * @param string $app_key 用户appKey
      *
      * @return $this
      */
-    public function setRequestId($request_id)
+    public function setAppKey($app_key)
     {
-        $this->container['request_id'] = $request_id;
+        $this->container['app_key'] = $app_key;
 
         return $this;
     }
 
     /**
-     * Gets token
+     * Gets game_session
      *
      * @return string
      */
-    public function getToken()
+    public function getGameSession()
     {
-        return $this->container['token'];
+        return $this->container['game_session'];
     }
 
     /**
-     * Sets token
+     * Sets game_session
      *
-     * @param string $token token
+     * @param string $game_session 游戏会话Id
      *
      * @return $this
      */
-    public function setToken($token)
+    public function setGameSession($game_session)
     {
-        $this->container['token'] = $token;
+        $this->container['game_session'] = $game_session;
 
         return $this;
     }
 
     /**
-     * Gets expire_time
-     *
-     * @return int
-     */
-    public function getExpireTime()
-    {
-        return $this->container['expire_time'];
-    }
-
-    /**
-     * Sets expire_time
-     *
-     * @param int $expire_time 当前token失效时间
-     *
-     * @return $this
-     */
-    public function setExpireTime($expire_time)
-    {
-        $this->container['expire_time'] = $expire_time;
-
-        return $this;
-    }
-
-    /**
-     * Gets code
+     * Gets server_url
      *
      * @return string
      */
-    public function getCode()
+    public function getServerUrl()
     {
-        return $this->container['code'];
+        return $this->container['server_url'];
     }
 
     /**
-     * Sets code
+     * Sets server_url
      *
-     * @param string $code 返回码
+     * @param string $server_url 推流服务器地址
      *
      * @return $this
      */
-    public function setCode($code)
+    public function setServerUrl($server_url)
     {
-        $this->container['code'] = $code;
+        $this->container['server_url'] = $server_url;
 
         return $this;
     }
 
     /**
-     * Gets message
+     * Gets stream_key
      *
      * @return string
      */
-    public function getMessage()
+    public function getStreamKey()
     {
-        return $this->container['message'];
+        return $this->container['stream_key'];
     }
 
     /**
-     * Sets message
+     * Sets stream_key
      *
-     * @param string $message 返回信息
+     * @param string $stream_key 鉴权参数
      *
      * @return $this
      */
-    public function setMessage($message)
+    public function setStreamKey($stream_key)
     {
-        $this->container['message'] = $message;
+        $this->container['stream_key'] = $stream_key;
 
         return $this;
     }
 
     /**
-     * Gets success
+     * Gets config
      *
-     * @return bool
+     * @return \Yjopenapi\Client\Model\LiveStartGameLiveConfig
      */
-    public function getSuccess()
+    public function getConfig()
     {
-        return $this->container['success'];
+        return $this->container['config'];
     }
 
     /**
-     * Sets success
+     * Sets config
      *
-     * @param bool $success 调度执行结果
+     * @param \Yjopenapi\Client\Model\LiveStartGameLiveConfig $config 直播推流配置
      *
      * @return $this
      */
-    public function setSuccess($success)
+    public function setConfig($config)
     {
-        $this->container['success'] = $success;
+        $this->container['config'] = $config;
 
         return $this;
     }

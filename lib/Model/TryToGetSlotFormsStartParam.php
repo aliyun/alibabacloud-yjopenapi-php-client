@@ -67,9 +67,9 @@ class TryToGetSlotFormsStartParam implements ModelInterface, ArrayAccess
     protected static $serialFormats = [
         'resolution' => null,
 'picture_quality' => null,
-'keep_alive' => null,
-'keep_disconnect_alive' => null,
-'keep_no_play_alive' => null,
+'keep_alive' => 'int64',
+'keep_disconnect_alive' => 'int64',
+'keep_no_play_alive' => 'int64',
 'device_brand' => null,
 'device_model' => null,
 'device_dpi' => null,
