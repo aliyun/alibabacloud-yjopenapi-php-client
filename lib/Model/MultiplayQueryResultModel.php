@@ -1,6 +1,6 @@
 <?php
 /**
- * GetStopGameTokenResultModel
+ * MultiplayQueryResultModel
  *
  * PHP version 5
  *
@@ -23,12 +23,12 @@ use \ArrayAccess;
 use \Yjopenapi\Client\Api\ObjectSerializer;
 
 /**
- * GetStopGameTokenResultModel Class Doc Comment
+ * MultiplayQueryResultModel Class Doc Comment
  *
  * @category Class
  * @package  Yjopenapi\Client
  */
-class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
+class MultiplayQueryResultModel implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -37,7 +37,7 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $serialModelName = 'GetStopGameTokenResultModel';
+    protected static $serialModelName = 'MultiplayQueryResultModel';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -45,12 +45,12 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $serialTypes = [
-        'request_id' => 'string',
-'token' => 'string',
-'expire_time' => 'int',
-'code' => 'string',
-'message' => 'string',
-'success' => 'bool'    ];
+        'data_ver' => 'string',
+'mp_id' => 'string',
+'config' => '\Yjopenapi\Client\Model\MultiplayQueryResultModelConfig',
+'creator_token_id' => 'string',
+'end_ts' => 'int',
+'tokens' => '\Yjopenapi\Client\Model\MultiplayQueryResultModelTokens[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -58,12 +58,12 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $serialFormats = [
-        'request_id' => null,
-'token' => null,
-'expire_time' => 'int64',
-'code' => null,
-'message' => null,
-'success' => null    ];
+        'data_ver' => null,
+'mp_id' => null,
+'config' => null,
+'creator_token_id' => null,
+'end_ts' => 'int64',
+'tokens' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -92,12 +92,12 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'request_id' => 'requestId',
-'token' => 'token',
-'expire_time' => 'expireTime',
-'code' => 'code',
-'message' => 'message',
-'success' => 'success'    ];
+        'data_ver' => 'dataVer',
+'mp_id' => 'mpId',
+'config' => 'config',
+'creator_token_id' => 'creatorTokenId',
+'end_ts' => 'endTs',
+'tokens' => 'tokens'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -105,12 +105,12 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'request_id' => 'setRequestId',
-'token' => 'setToken',
-'expire_time' => 'setExpireTime',
-'code' => 'setCode',
-'message' => 'setMessage',
-'success' => 'setSuccess'    ];
+        'data_ver' => 'setDataVer',
+'mp_id' => 'setMpId',
+'config' => 'setConfig',
+'creator_token_id' => 'setCreatorTokenId',
+'end_ts' => 'setEndTs',
+'tokens' => 'setTokens'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -118,12 +118,12 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'request_id' => 'getRequestId',
-'token' => 'getToken',
-'expire_time' => 'getExpireTime',
-'code' => 'getCode',
-'message' => 'getMessage',
-'success' => 'getSuccess'    ];
+        'data_ver' => 'getDataVer',
+'mp_id' => 'getMpId',
+'config' => 'getConfig',
+'creator_token_id' => 'getCreatorTokenId',
+'end_ts' => 'getEndTs',
+'tokens' => 'getTokens'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -183,155 +183,155 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['request_id'] = isset($data['request_id']) ? $data['request_id'] : null;
-        $this->container['token'] = isset($data['token']) ? $data['token'] : null;
-        $this->container['expire_time'] = isset($data['expire_time']) ? $data['expire_time'] : null;
-        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
+        $this->container['data_ver'] = isset($data['data_ver']) ? $data['data_ver'] : null;
+        $this->container['mp_id'] = isset($data['mp_id']) ? $data['mp_id'] : null;
+        $this->container['config'] = isset($data['config']) ? $data['config'] : null;
+        $this->container['creator_token_id'] = isset($data['creator_token_id']) ? $data['creator_token_id'] : null;
+        $this->container['end_ts'] = isset($data['end_ts']) ? $data['end_ts'] : null;
+        $this->container['tokens'] = isset($data['tokens']) ? $data['tokens'] : null;
     }
 
 
     /**
-     * Gets request_id
+     * Gets data_ver
      *
      * @return string
      */
-    public function getRequestId()
+    public function getDataVer()
     {
-        return $this->container['request_id'];
+        return $this->container['data_ver'];
     }
 
     /**
-     * Sets request_id
+     * Sets data_ver
      *
-     * @param string $request_id 请求链路唯一标示
+     * @param string $data_ver 当前联机数据版本号
      *
      * @return $this
      */
-    public function setRequestId($request_id)
+    public function setDataVer($data_ver)
     {
-        $this->container['request_id'] = $request_id;
+        $this->container['data_ver'] = $data_ver;
 
         return $this;
     }
 
     /**
-     * Gets token
+     * Gets mp_id
      *
      * @return string
      */
-    public function getToken()
+    public function getMpId()
     {
-        return $this->container['token'];
+        return $this->container['mp_id'];
     }
 
     /**
-     * Sets token
+     * Sets mp_id
      *
-     * @param string $token token
+     * @param string $mp_id 联机Id
      *
      * @return $this
      */
-    public function setToken($token)
+    public function setMpId($mp_id)
     {
-        $this->container['token'] = $token;
+        $this->container['mp_id'] = $mp_id;
 
         return $this;
     }
 
     /**
-     * Gets expire_time
+     * Gets config
+     *
+     * @return \Yjopenapi\Client\Model\MultiplayQueryResultModelConfig
+     */
+    public function getConfig()
+    {
+        return $this->container['config'];
+    }
+
+    /**
+     * Sets config
+     *
+     * @param \Yjopenapi\Client\Model\MultiplayQueryResultModelConfig $config config
+     *
+     * @return $this
+     */
+    public function setConfig($config)
+    {
+        $this->container['config'] = $config;
+
+        return $this;
+    }
+
+    /**
+     * Gets creator_token_id
+     *
+     * @return string
+     */
+    public function getCreatorTokenId()
+    {
+        return $this->container['creator_token_id'];
+    }
+
+    /**
+     * Sets creator_token_id
+     *
+     * @param string $creator_token_id 创建者tokenId
+     *
+     * @return $this
+     */
+    public function setCreatorTokenId($creator_token_id)
+    {
+        $this->container['creator_token_id'] = $creator_token_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets end_ts
      *
      * @return int
      */
-    public function getExpireTime()
+    public function getEndTs()
     {
-        return $this->container['expire_time'];
+        return $this->container['end_ts'];
     }
 
     /**
-     * Sets expire_time
+     * Sets end_ts
      *
-     * @param int $expire_time 当前token失效时间
+     * @param int $end_ts 联机结束时间
      *
      * @return $this
      */
-    public function setExpireTime($expire_time)
+    public function setEndTs($end_ts)
     {
-        $this->container['expire_time'] = $expire_time;
+        $this->container['end_ts'] = $end_ts;
 
         return $this;
     }
 
     /**
-     * Gets code
+     * Gets tokens
      *
-     * @return string
+     * @return \Yjopenapi\Client\Model\MultiplayQueryResultModelTokens[]
      */
-    public function getCode()
+    public function getTokens()
     {
-        return $this->container['code'];
+        return $this->container['tokens'];
     }
 
     /**
-     * Sets code
+     * Sets tokens
      *
-     * @param string $code 返回码
+     * @param \Yjopenapi\Client\Model\MultiplayQueryResultModelTokens[] $tokens 当前联机玩家列表
      *
      * @return $this
      */
-    public function setCode($code)
+    public function setTokens($tokens)
     {
-        $this->container['code'] = $code;
-
-        return $this;
-    }
-
-    /**
-     * Gets message
-     *
-     * @return string
-     */
-    public function getMessage()
-    {
-        return $this->container['message'];
-    }
-
-    /**
-     * Sets message
-     *
-     * @param string $message 返回信息
-     *
-     * @return $this
-     */
-    public function setMessage($message)
-    {
-        $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /**
-     * Gets success
-     *
-     * @return bool
-     */
-    public function getSuccess()
-    {
-        return $this->container['success'];
-    }
-
-    /**
-     * Sets success
-     *
-     * @param bool $success 调度执行结果
-     *
-     * @return $this
-     */
-    public function setSuccess($success)
-    {
-        $this->container['success'] = $success;
+        $this->container['tokens'] = $tokens;
 
         return $this;
     }

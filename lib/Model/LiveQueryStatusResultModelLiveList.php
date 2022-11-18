@@ -1,6 +1,6 @@
 <?php
 /**
- * GetStopGameTokenResultModel
+ * LiveQueryStatusResultModelLiveList
  *
  * PHP version 5
  *
@@ -23,12 +23,12 @@ use \ArrayAccess;
 use \Yjopenapi\Client\Api\ObjectSerializer;
 
 /**
- * GetStopGameTokenResultModel Class Doc Comment
+ * LiveQueryStatusResultModelLiveList Class Doc Comment
  *
  * @category Class
  * @package  Yjopenapi\Client
  */
-class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
+class LiveQueryStatusResultModelLiveList implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -37,7 +37,7 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $serialModelName = 'GetStopGameTokenResultModel';
+    protected static $serialModelName = 'LiveQueryStatusResultModelLiveList';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -45,12 +45,12 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $serialTypes = [
-        'request_id' => 'string',
-'token' => 'string',
-'expire_time' => 'int',
-'code' => 'string',
+        'live_id' => 'string',
+'server_url' => 'string',
+'stream_key' => 'string',
+'status' => 'string',
 'message' => 'string',
-'success' => 'bool'    ];
+'config' => '\Yjopenapi\Client\Model\LiveQueryStatusResultModelLiveListConfig'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -58,12 +58,12 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $serialFormats = [
-        'request_id' => null,
-'token' => null,
-'expire_time' => 'int64',
-'code' => null,
+        'live_id' => null,
+'server_url' => null,
+'stream_key' => null,
+'status' => null,
 'message' => null,
-'success' => null    ];
+'config' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -92,12 +92,12 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'request_id' => 'requestId',
-'token' => 'token',
-'expire_time' => 'expireTime',
-'code' => 'code',
+        'live_id' => 'liveId',
+'server_url' => 'serverUrl',
+'stream_key' => 'streamKey',
+'status' => 'status',
 'message' => 'message',
-'success' => 'success'    ];
+'config' => 'config'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -105,12 +105,12 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'request_id' => 'setRequestId',
-'token' => 'setToken',
-'expire_time' => 'setExpireTime',
-'code' => 'setCode',
+        'live_id' => 'setLiveId',
+'server_url' => 'setServerUrl',
+'stream_key' => 'setStreamKey',
+'status' => 'setStatus',
 'message' => 'setMessage',
-'success' => 'setSuccess'    ];
+'config' => 'setConfig'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -118,12 +118,12 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'request_id' => 'getRequestId',
-'token' => 'getToken',
-'expire_time' => 'getExpireTime',
-'code' => 'getCode',
+        'live_id' => 'getLiveId',
+'server_url' => 'getServerUrl',
+'stream_key' => 'getStreamKey',
+'status' => 'getStatus',
 'message' => 'getMessage',
-'success' => 'getSuccess'    ];
+'config' => 'getConfig'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -183,107 +183,107 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['request_id'] = isset($data['request_id']) ? $data['request_id'] : null;
-        $this->container['token'] = isset($data['token']) ? $data['token'] : null;
-        $this->container['expire_time'] = isset($data['expire_time']) ? $data['expire_time'] : null;
-        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['live_id'] = isset($data['live_id']) ? $data['live_id'] : null;
+        $this->container['server_url'] = isset($data['server_url']) ? $data['server_url'] : null;
+        $this->container['stream_key'] = isset($data['stream_key']) ? $data['stream_key'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
+        $this->container['config'] = isset($data['config']) ? $data['config'] : null;
     }
 
 
     /**
-     * Gets request_id
+     * Gets live_id
      *
      * @return string
      */
-    public function getRequestId()
+    public function getLiveId()
     {
-        return $this->container['request_id'];
+        return $this->container['live_id'];
     }
 
     /**
-     * Sets request_id
+     * Sets live_id
      *
-     * @param string $request_id 请求链路唯一标示
+     * @param string $live_id 推流标识ID
      *
      * @return $this
      */
-    public function setRequestId($request_id)
+    public function setLiveId($live_id)
     {
-        $this->container['request_id'] = $request_id;
+        $this->container['live_id'] = $live_id;
 
         return $this;
     }
 
     /**
-     * Gets token
+     * Gets server_url
      *
      * @return string
      */
-    public function getToken()
+    public function getServerUrl()
     {
-        return $this->container['token'];
+        return $this->container['server_url'];
     }
 
     /**
-     * Sets token
+     * Sets server_url
      *
-     * @param string $token token
+     * @param string $server_url 推流服务地址
      *
      * @return $this
      */
-    public function setToken($token)
+    public function setServerUrl($server_url)
     {
-        $this->container['token'] = $token;
+        $this->container['server_url'] = $server_url;
 
         return $this;
     }
 
     /**
-     * Gets expire_time
+     * Gets stream_key
      *
-     * @return int
+     * @return string
      */
-    public function getExpireTime()
+    public function getStreamKey()
     {
-        return $this->container['expire_time'];
+        return $this->container['stream_key'];
     }
 
     /**
-     * Sets expire_time
+     * Sets stream_key
      *
-     * @param int $expire_time 当前token失效时间
+     * @param string $stream_key 推流鉴权参数
      *
      * @return $this
      */
-    public function setExpireTime($expire_time)
+    public function setStreamKey($stream_key)
     {
-        $this->container['expire_time'] = $expire_time;
+        $this->container['stream_key'] = $stream_key;
 
         return $this;
     }
 
     /**
-     * Gets code
+     * Gets status
      *
      * @return string
      */
-    public function getCode()
+    public function getStatus()
     {
-        return $this->container['code'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets code
+     * Sets status
      *
-     * @param string $code 返回码
+     * @param string $status 推流状态
      *
      * @return $this
      */
-    public function setCode($code)
+    public function setStatus($status)
     {
-        $this->container['code'] = $code;
+        $this->container['status'] = $status;
 
         return $this;
     }
@@ -301,7 +301,7 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
     /**
      * Sets message
      *
-     * @param string $message 返回信息
+     * @param string $message 推流状态消息
      *
      * @return $this
      */
@@ -313,25 +313,25 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets success
+     * Gets config
      *
-     * @return bool
+     * @return \Yjopenapi\Client\Model\LiveQueryStatusResultModelLiveListConfig
      */
-    public function getSuccess()
+    public function getConfig()
     {
-        return $this->container['success'];
+        return $this->container['config'];
     }
 
     /**
-     * Sets success
+     * Sets config
      *
-     * @param bool $success 调度执行结果
+     * @param \Yjopenapi\Client\Model\LiveQueryStatusResultModelLiveListConfig $config config
      *
      * @return $this
      */
-    public function setSuccess($success)
+    public function setConfig($config)
     {
-        $this->container['success'] = $success;
+        $this->container['config'] = $config;
 
         return $this;
     }

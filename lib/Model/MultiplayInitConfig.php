@@ -1,6 +1,6 @@
 <?php
 /**
- * GetStopGameTokenResultModel
+ * MultiplayInitConfig
  *
  * PHP version 5
  *
@@ -23,12 +23,12 @@ use \ArrayAccess;
 use \Yjopenapi\Client\Api\ObjectSerializer;
 
 /**
- * GetStopGameTokenResultModel Class Doc Comment
+ * MultiplayInitConfig Class Doc Comment
  *
  * @category Class
  * @package  Yjopenapi\Client
  */
-class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
+class MultiplayInitConfig implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -37,7 +37,7 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $serialModelName = 'GetStopGameTokenResultModel';
+    protected static $serialModelName = 'MultiplayInitConfig';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -45,12 +45,10 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $serialTypes = [
-        'request_id' => 'string',
-'token' => 'string',
-'expire_time' => 'int',
-'code' => 'string',
-'message' => 'string',
-'success' => 'bool'    ];
+        'max_token' => 'int',
+'host_timeout' => 'int',
+'connect_timeout' => 'int',
+'input_timeout' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -58,12 +56,10 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $serialFormats = [
-        'request_id' => null,
-'token' => null,
-'expire_time' => 'int64',
-'code' => null,
-'message' => null,
-'success' => null    ];
+        'max_token' => null,
+'host_timeout' => null,
+'connect_timeout' => null,
+'input_timeout' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -92,12 +88,10 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'request_id' => 'requestId',
-'token' => 'token',
-'expire_time' => 'expireTime',
-'code' => 'code',
-'message' => 'message',
-'success' => 'success'    ];
+        'max_token' => 'maxToken',
+'host_timeout' => 'hostTimeout',
+'connect_timeout' => 'connectTimeout',
+'input_timeout' => 'inputTimeout'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -105,12 +99,10 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'request_id' => 'setRequestId',
-'token' => 'setToken',
-'expire_time' => 'setExpireTime',
-'code' => 'setCode',
-'message' => 'setMessage',
-'success' => 'setSuccess'    ];
+        'max_token' => 'setMaxToken',
+'host_timeout' => 'setHostTimeout',
+'connect_timeout' => 'setConnectTimeout',
+'input_timeout' => 'setInputTimeout'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -118,12 +110,10 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'request_id' => 'getRequestId',
-'token' => 'getToken',
-'expire_time' => 'getExpireTime',
-'code' => 'getCode',
-'message' => 'getMessage',
-'success' => 'getSuccess'    ];
+        'max_token' => 'getMaxToken',
+'host_timeout' => 'getHostTimeout',
+'connect_timeout' => 'getConnectTimeout',
+'input_timeout' => 'getInputTimeout'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -183,155 +173,105 @@ class GetStopGameTokenResultModel implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['request_id'] = isset($data['request_id']) ? $data['request_id'] : null;
-        $this->container['token'] = isset($data['token']) ? $data['token'] : null;
-        $this->container['expire_time'] = isset($data['expire_time']) ? $data['expire_time'] : null;
-        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
+        $this->container['max_token'] = isset($data['max_token']) ? $data['max_token'] : null;
+        $this->container['host_timeout'] = isset($data['host_timeout']) ? $data['host_timeout'] : null;
+        $this->container['connect_timeout'] = isset($data['connect_timeout']) ? $data['connect_timeout'] : null;
+        $this->container['input_timeout'] = isset($data['input_timeout']) ? $data['input_timeout'] : null;
     }
 
 
     /**
-     * Gets request_id
-     *
-     * @return string
-     */
-    public function getRequestId()
-    {
-        return $this->container['request_id'];
-    }
-
-    /**
-     * Sets request_id
-     *
-     * @param string $request_id 请求链路唯一标示
-     *
-     * @return $this
-     */
-    public function setRequestId($request_id)
-    {
-        $this->container['request_id'] = $request_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets token
-     *
-     * @return string
-     */
-    public function getToken()
-    {
-        return $this->container['token'];
-    }
-
-    /**
-     * Sets token
-     *
-     * @param string $token token
-     *
-     * @return $this
-     */
-    public function setToken($token)
-    {
-        $this->container['token'] = $token;
-
-        return $this;
-    }
-
-    /**
-     * Gets expire_time
+     * Gets max_token
      *
      * @return int
      */
-    public function getExpireTime()
+    public function getMaxToken()
     {
-        return $this->container['expire_time'];
+        return $this->container['max_token'];
     }
 
     /**
-     * Sets expire_time
+     * Sets max_token
      *
-     * @param int $expire_time 当前token失效时间
+     * @param int $max_token 联机最多能进的人数
      *
      * @return $this
      */
-    public function setExpireTime($expire_time)
+    public function setMaxToken($max_token)
     {
-        $this->container['expire_time'] = $expire_time;
+        $this->container['max_token'] = $max_token;
 
         return $this;
     }
 
     /**
-     * Gets code
+     * Gets host_timeout
      *
-     * @return string
+     * @return int
      */
-    public function getCode()
+    public function getHostTimeout()
     {
-        return $this->container['code'];
+        return $this->container['host_timeout'];
     }
 
     /**
-     * Sets code
+     * Sets host_timeout
      *
-     * @param string $code 返回码
+     * @param int $host_timeout 联机主机断连超时时间
      *
      * @return $this
      */
-    public function setCode($code)
+    public function setHostTimeout($host_timeout)
     {
-        $this->container['code'] = $code;
+        $this->container['host_timeout'] = $host_timeout;
 
         return $this;
     }
 
     /**
-     * Gets message
+     * Gets connect_timeout
      *
-     * @return string
+     * @return int
      */
-    public function getMessage()
+    public function getConnectTimeout()
     {
-        return $this->container['message'];
+        return $this->container['connect_timeout'];
     }
 
     /**
-     * Sets message
+     * Sets connect_timeout
      *
-     * @param string $message 返回信息
+     * @param int $connect_timeout 联机从机玩家断连超时时间
      *
      * @return $this
      */
-    public function setMessage($message)
+    public function setConnectTimeout($connect_timeout)
     {
-        $this->container['message'] = $message;
+        $this->container['connect_timeout'] = $connect_timeout;
 
         return $this;
     }
 
     /**
-     * Gets success
+     * Gets input_timeout
      *
-     * @return bool
+     * @return int
      */
-    public function getSuccess()
+    public function getInputTimeout()
     {
-        return $this->container['success'];
+        return $this->container['input_timeout'];
     }
 
     /**
-     * Sets success
+     * Sets input_timeout
      *
-     * @param bool $success 调度执行结果
+     * @param int $input_timeout 联机从机无操作超时时间
      *
      * @return $this
      */
-    public function setSuccess($success)
+    public function setInputTimeout($input_timeout)
     {
-        $this->container['success'] = $success;
+        $this->container['input_timeout'] = $input_timeout;
 
         return $this;
     }
