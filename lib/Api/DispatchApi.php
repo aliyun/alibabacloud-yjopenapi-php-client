@@ -312,6 +312,233 @@ class DispatchApi
     }
 
     /**
+     * Operation getGameConcurrency
+     *
+     * @param  \Yjopenapi\Client\Model\GetGameConcurrencyForms $varForms
+     *
+     * @throws \Yjopenapi\Client\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Yjopenapi\Client\Model\GetGameConcurrencyResult
+     */
+    public function getGameConcurrency($varForms)
+    {
+        list($response) = $this->getGameConcurrencyWithHttpInfo($varForms);
+        return $response;
+    }
+
+    /**
+     * Operation getGameConcurrencyWithHttpInfo
+     *
+     * @param  \Yjopenapi\Client\Model\GetGameConcurrencyForms $varForms
+     *
+     * @throws \Yjopenapi\Client\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Yjopenapi\Client\Model\GetGameConcurrencyResult, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getGameConcurrencyWithHttpInfo($varForms)
+    {
+        $returnType = '\Yjopenapi\Client\Model\GetGameConcurrencyResult';
+        $request = $this->getGameConcurrencyRequest($varForms);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+
+            $content = $responseBody->getContents();
+            if (!in_array($returnType, ['string','integer','bool'])) {
+                $content = json_decode($content);
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yjopenapi\Client\Model\GetGameConcurrencyResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getGameConcurrencyAsync
+     *
+     * 
+     *
+     * @param  \Yjopenapi\Client\Model\GetGameConcurrencyForms $varForms
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getGameConcurrencyAsync($varForms)
+    {
+        return $this->getGameConcurrencyAsyncWithHttpInfo($varForms)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getGameConcurrencyAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  \Yjopenapi\Client\Model\GetGameConcurrencyForms $varForms
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getGameConcurrencyAsyncWithHttpInfo($varForms)
+    {
+        $returnType = '\Yjopenapi\Client\Model\GetGameConcurrencyResult';
+        $request = $this->getGameConcurrencyRequest($varForms);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+
+                    $content = $responseBody->getContents();
+                    if ($returnType !== 'string') {
+                        $content = json_decode($content);
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getGameConcurrency'
+     *
+     * @param  \Yjopenapi\Client\Model\GetGameConcurrencyForms $varForms
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getGameConcurrencyRequest($varForms)
+    {
+        // verify the required parameter 'game_id' is set
+        if ($varForms['game_id'] === null || (is_array($varForms['game_id']) && count($varForms['game_id']) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $varForms[\'game_id\'] when calling getGameConcurrency'
+            );
+        }
+        // verify the required parameter 'app_key' is set
+        if ($varForms['app_key'] === null || (is_array($varForms['app_key']) && count($varForms['app_key']) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $varForms[\'app_key\'] when calling getGameConcurrency'
+            );
+        }
+
+        $resourcePath = '/getGameConcurrency';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+
+        // form params
+        $formParams['gameId'] = ObjectSerializer::toFormValue($varForms['game_id']);
+        $formParams['appKey'] = ObjectSerializer::toFormValue($varForms['app_key']);
+        if ($varForms['query_queue_concurrency'] !== null) {
+            $formParams['queryQueueConcurrency'] = ObjectSerializer::toFormValue($varForms['query_queue_concurrency']);
+        }
+        if ($varForms['queue_user_level'] !== null) {
+            $formParams['queueUserLevel'] = ObjectSerializer::toFormValue($varForms['queue_user_level']);
+        }
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json'],
+            ['application/x-www-form-urlencoded']
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        $signHeaders = $this->headerSelector->prepareSignHeader($formParams, $queryParams, 'POST', $this->config);
+
+        $headers = array_merge(
+            ['User-Agent' => 'cgw-client/1.0.0/php'],
+            $signHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getScheme() . '://' . $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getStock
      *
      * @param  \Yjopenapi\Client\Model\GetStockForms $varForms
@@ -720,6 +947,227 @@ class DispatchApi
 
         // form params
         $formParams['gameId'] = ObjectSerializer::toFormValue($varForms['game_id']);
+        $formParams['appKey'] = ObjectSerializer::toFormValue($varForms['app_key']);
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json'],
+            ['application/x-www-form-urlencoded']
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        $signHeaders = $this->headerSelector->prepareSignHeader($formParams, $queryParams, 'POST', $this->config);
+
+        $headers = array_merge(
+            ['User-Agent' => 'cgw-client/1.0.0/php'],
+            $signHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getScheme() . '://' . $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation querySessionStatus
+     *
+     * @param  \Yjopenapi\Client\Model\QuerySessionStatusForms $varForms
+     *
+     * @throws \Yjopenapi\Client\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Yjopenapi\Client\Model\QuerySessionStatusResult
+     */
+    public function querySessionStatus($varForms)
+    {
+        list($response) = $this->querySessionStatusWithHttpInfo($varForms);
+        return $response;
+    }
+
+    /**
+     * Operation querySessionStatusWithHttpInfo
+     *
+     * @param  \Yjopenapi\Client\Model\QuerySessionStatusForms $varForms
+     *
+     * @throws \Yjopenapi\Client\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Yjopenapi\Client\Model\QuerySessionStatusResult, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function querySessionStatusWithHttpInfo($varForms)
+    {
+        $returnType = '\Yjopenapi\Client\Model\QuerySessionStatusResult';
+        $request = $this->querySessionStatusRequest($varForms);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+
+            $content = $responseBody->getContents();
+            if (!in_array($returnType, ['string','integer','bool'])) {
+                $content = json_decode($content);
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yjopenapi\Client\Model\QuerySessionStatusResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation querySessionStatusAsync
+     *
+     * 
+     *
+     * @param  \Yjopenapi\Client\Model\QuerySessionStatusForms $varForms
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function querySessionStatusAsync($varForms)
+    {
+        return $this->querySessionStatusAsyncWithHttpInfo($varForms)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation querySessionStatusAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  \Yjopenapi\Client\Model\QuerySessionStatusForms $varForms
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function querySessionStatusAsyncWithHttpInfo($varForms)
+    {
+        $returnType = '\Yjopenapi\Client\Model\QuerySessionStatusResult';
+        $request = $this->querySessionStatusRequest($varForms);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+
+                    $content = $responseBody->getContents();
+                    if ($returnType !== 'string') {
+                        $content = json_decode($content);
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'querySessionStatus'
+     *
+     * @param  \Yjopenapi\Client\Model\QuerySessionStatusForms $varForms
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function querySessionStatusRequest($varForms)
+    {
+        // verify the required parameter 'game_session' is set
+        if ($varForms['game_session'] === null || (is_array($varForms['game_session']) && count($varForms['game_session']) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $varForms[\'game_session\'] when calling querySessionStatus'
+            );
+        }
+        // verify the required parameter 'app_key' is set
+        if ($varForms['app_key'] === null || (is_array($varForms['app_key']) && count($varForms['app_key']) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $varForms[\'app_key\'] when calling querySessionStatus'
+            );
+        }
+
+        $resourcePath = '/querySessionStatus';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+
+        // form params
+        $formParams['gameSession'] = ObjectSerializer::toFormValue($varForms['game_session']);
         $formParams['appKey'] = ObjectSerializer::toFormValue($varForms['app_key']);
 
         $headers = $this->headerSelector->selectHeaders(
