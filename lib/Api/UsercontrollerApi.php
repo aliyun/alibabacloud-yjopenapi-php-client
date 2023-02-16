@@ -303,6 +303,234 @@ class UsercontrollerApi
     }
 
     /**
+     * Operation getGameTrialSurplusDuration
+     *
+     * @param  \Yjopenapi\Client\Model\UsercontrollerGetGameTrialSurplusDurationForms $varForms
+     *
+     * @throws \Yjopenapi\Client\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Yjopenapi\Client\Model\UsercontollerGetGameTrialSurplusDurationResult
+     */
+    public function getGameTrialSurplusDuration($varForms)
+    {
+        list($response) = $this->getGameTrialSurplusDurationWithHttpInfo($varForms);
+        return $response;
+    }
+
+    /**
+     * Operation getGameTrialSurplusDurationWithHttpInfo
+     *
+     * @param  \Yjopenapi\Client\Model\UsercontrollerGetGameTrialSurplusDurationForms $varForms
+     *
+     * @throws \Yjopenapi\Client\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Yjopenapi\Client\Model\UsercontollerGetGameTrialSurplusDurationResult, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getGameTrialSurplusDurationWithHttpInfo($varForms)
+    {
+        $returnType = '\Yjopenapi\Client\Model\UsercontollerGetGameTrialSurplusDurationResult';
+        $request = $this->getGameTrialSurplusDurationRequest($varForms);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+
+            $content = $responseBody->getContents();
+            if (!in_array($returnType, ['string','integer','bool'])) {
+                $content = json_decode($content);
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yjopenapi\Client\Model\UsercontollerGetGameTrialSurplusDurationResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getGameTrialSurplusDurationAsync
+     *
+     * 
+     *
+     * @param  \Yjopenapi\Client\Model\UsercontrollerGetGameTrialSurplusDurationForms $varForms
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getGameTrialSurplusDurationAsync($varForms)
+    {
+        return $this->getGameTrialSurplusDurationAsyncWithHttpInfo($varForms)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getGameTrialSurplusDurationAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  \Yjopenapi\Client\Model\UsercontrollerGetGameTrialSurplusDurationForms $varForms
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getGameTrialSurplusDurationAsyncWithHttpInfo($varForms)
+    {
+        $returnType = '\Yjopenapi\Client\Model\UsercontollerGetGameTrialSurplusDurationResult';
+        $request = $this->getGameTrialSurplusDurationRequest($varForms);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+
+                    $content = $responseBody->getContents();
+                    if ($returnType !== 'string') {
+                        $content = json_decode($content);
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getGameTrialSurplusDuration'
+     *
+     * @param  \Yjopenapi\Client\Model\UsercontrollerGetGameTrialSurplusDurationForms $varForms
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getGameTrialSurplusDurationRequest($varForms)
+    {
+        // verify the required parameter 'account_id' is set
+        if ($varForms['account_id'] === null || (is_array($varForms['account_id']) && count($varForms['account_id']) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $varForms[\'account_id\'] when calling getGameTrialSurplusDuration'
+            );
+        }
+        // verify the required parameter 'game_id' is set
+        if ($varForms['game_id'] === null || (is_array($varForms['game_id']) && count($varForms['game_id']) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $varForms[\'game_id\'] when calling getGameTrialSurplusDuration'
+            );
+        }
+        // verify the required parameter 'project_id' is set
+        if ($varForms['project_id'] === null || (is_array($varForms['project_id']) && count($varForms['project_id']) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $varForms[\'project_id\'] when calling getGameTrialSurplusDuration'
+            );
+        }
+
+        $resourcePath = '/usercontroller/getGameTrialSurplusDuration';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+
+        // form params
+        $formParams['accountId'] = ObjectSerializer::toFormValue($varForms['account_id']);
+        $formParams['gameId'] = ObjectSerializer::toFormValue($varForms['game_id']);
+        $formParams['projectId'] = ObjectSerializer::toFormValue($varForms['project_id']);
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json'],
+            ['application/x-www-form-urlencoded']
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        $signHeaders = $this->headerSelector->prepareSignHeader($formParams, $queryParams, 'POST', $this->config);
+
+        $headers = array_merge(
+            ['User-Agent' => 'cgw-client/1.0.0/php'],
+            $signHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getScheme() . '://' . $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation listLatestGameArchive
      *
      * @param  \Yjopenapi\Client\Model\UsercontrollerListLatestGameArchiveForms $varForms
