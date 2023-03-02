@@ -12,7 +12,7 @@ PHP 5.5 and later
 
 To install the bindings via Composer:
 ```
-composer require alibabacloud/alibabacloud-yjopenapi-php-client 1.0.20230216
+composer require alibabacloud/alibabacloud-yjopenapi-php-client 1.0.20230301
 ```
 
 Then run `composer install`
@@ -80,10 +80,15 @@ try {
  | *ConsoleAdminApi* | **submitDeployment** | *submitDeploymentForms*  | *\Yjopenapi\Client\Model\ConsoleAdminSubmitDeploymentResult* | 提交游戏版本的部署请求 |
  | *ConsoleAdminApi* | **uploadGameVersionByDownload** | *uploadGameVersionByDownloadForms*  | *\Yjopenapi\Client\Model\ConsoleAdminUploadGameVersionByDownloadResult* | 一键上传：文件上传接口，用远程下载的方式生成新版本 |
  | *DispatchApi* | **batchStopGame** | *batchStopGameForms*  | *\Yjopenapi\Client\Model\BatchStopGameResult* | 游戏下全量踢下线，异步接口 |
+ | *DispatchApi* | **cancelGameHang** | *cancelGameHangForms*  | *\Yjopenapi\Client\Model\CancelGameHangResult* | 取消游戏挂机 |
  | *DispatchApi* | **getGameConcurrency** | *getGameConcurrencyForms*  | *\Yjopenapi\Client\Model\GetGameConcurrencyResult* | 调用GetGameConcurrency获取游戏当前并发数 |
  | *DispatchApi* | **getStock** | *getStockForms*  | *\Yjopenapi\Client\Model\GetStockResult* | 调用GetStock获取游戏当前库存 |
  | *DispatchApi* | **getStopGameToken** | *getStopGameTokenForms*  | *\Yjopenapi\Client\Model\GetStopGameTokenResult* | 全量踢下线获取token |
+ | *DispatchApi* | **listGameServerIp** | *listGameServerIpForms*  | *\Yjopenapi\Client\Model\ListGameServerIpResult* | 获取自己租户下的游戏服务器ip列表 |
+ | *DispatchApi* | **queryGameHang** | *queryGameHangForms*  | *\Yjopenapi\Client\Model\QueryGameHangResult* | 查询游戏挂机状态 |
  | *DispatchApi* | **querySessionStatus** | *querySessionStatusForms*  | *\Yjopenapi\Client\Model\QuerySessionStatusResult* | 查询会话当前状态 |
+ | *DispatchApi* | **setGameAlive** | *setGameAliveForms*  | *\Yjopenapi\Client\Model\SetGameAliveResult* | 设置游戏可运行时长 |
+ | *DispatchApi* | **setGameHang** | *setGameHangForms*  | *\Yjopenapi\Client\Model\SetGameHangResult* | 设置游戏挂机 |
  | *DispatchApi* | **stopGame** | *stopGameForms*  | *\Yjopenapi\Client\Model\StopGameResult* | 服务端发起，停止某个用户的某个游戏的某个会话 |
  | *DispatchApi* | **tryToGetSlot** | *tryToGetSlotForms*  | *\Yjopenapi\Client\Model\TryToGetSlotResult* | 为用户调度分配游戏容器，容器一旦分配成功会被锁住，一段时间内不再分配给其他用户，过期释放。 |
  | *LiveApi* | **queryStatus** | *queryStatusForms*  | *\Yjopenapi\Client\Model\LiveQueryStatusResult* | 查询推流状态 |
