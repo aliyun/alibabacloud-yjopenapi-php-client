@@ -46,7 +46,6 @@ class TryToGetSlotFormsStartParam implements ModelInterface, ArrayAccess
       */
     protected static $serialTypes = [
         'resolution' => 'string',
-'picture_quality' => 'string',
 'keep_alive' => 'int',
 'keep_disconnect_alive' => 'int',
 'keep_no_play_alive' => 'int',
@@ -57,7 +56,12 @@ class TryToGetSlotFormsStartParam implements ModelInterface, ArrayAccess
 'device_resolution' => 'string',
 'game_input' => 'string',
 'script_id' => 'int',
-'bit_rate_self_adaption' => 'int'    ];
+'bit_rate_self_adaption' => 'int',
+'schedule_user_levels' => 'string',
+'ssaid' => 'string',
+'app_channel' => 'string',
+'cloud_init' => 'string',
+'sys_device_id' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -66,7 +70,6 @@ class TryToGetSlotFormsStartParam implements ModelInterface, ArrayAccess
       */
     protected static $serialFormats = [
         'resolution' => null,
-'picture_quality' => null,
 'keep_alive' => 'int64',
 'keep_disconnect_alive' => 'int64',
 'keep_no_play_alive' => 'int64',
@@ -77,7 +80,12 @@ class TryToGetSlotFormsStartParam implements ModelInterface, ArrayAccess
 'device_resolution' => null,
 'game_input' => null,
 'script_id' => null,
-'bit_rate_self_adaption' => null    ];
+'bit_rate_self_adaption' => null,
+'schedule_user_levels' => null,
+'ssaid' => null,
+'app_channel' => null,
+'cloud_init' => null,
+'sys_device_id' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -107,7 +115,6 @@ class TryToGetSlotFormsStartParam implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'resolution' => 'resolution',
-'picture_quality' => 'pictureQuality',
 'keep_alive' => 'keepAlive',
 'keep_disconnect_alive' => 'keepDisconnectAlive',
 'keep_no_play_alive' => 'keepNoPlayAlive',
@@ -118,7 +125,12 @@ class TryToGetSlotFormsStartParam implements ModelInterface, ArrayAccess
 'device_resolution' => 'deviceResolution',
 'game_input' => 'gameInput',
 'script_id' => 'scriptId',
-'bit_rate_self_adaption' => 'bitRateSelfAdaption'    ];
+'bit_rate_self_adaption' => 'bitRateSelfAdaption',
+'schedule_user_levels' => 'scheduleUserLevels',
+'ssaid' => 'ssaid',
+'app_channel' => 'appChannel',
+'cloud_init' => 'cloudInit',
+'sys_device_id' => 'sysDeviceId'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -127,7 +139,6 @@ class TryToGetSlotFormsStartParam implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'resolution' => 'setResolution',
-'picture_quality' => 'setPictureQuality',
 'keep_alive' => 'setKeepAlive',
 'keep_disconnect_alive' => 'setKeepDisconnectAlive',
 'keep_no_play_alive' => 'setKeepNoPlayAlive',
@@ -138,7 +149,12 @@ class TryToGetSlotFormsStartParam implements ModelInterface, ArrayAccess
 'device_resolution' => 'setDeviceResolution',
 'game_input' => 'setGameInput',
 'script_id' => 'setScriptId',
-'bit_rate_self_adaption' => 'setBitRateSelfAdaption'    ];
+'bit_rate_self_adaption' => 'setBitRateSelfAdaption',
+'schedule_user_levels' => 'setScheduleUserLevels',
+'ssaid' => 'setSsaid',
+'app_channel' => 'setAppChannel',
+'cloud_init' => 'setCloudInit',
+'sys_device_id' => 'setSysDeviceId'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -147,7 +163,6 @@ class TryToGetSlotFormsStartParam implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'resolution' => 'getResolution',
-'picture_quality' => 'getPictureQuality',
 'keep_alive' => 'getKeepAlive',
 'keep_disconnect_alive' => 'getKeepDisconnectAlive',
 'keep_no_play_alive' => 'getKeepNoPlayAlive',
@@ -158,7 +173,12 @@ class TryToGetSlotFormsStartParam implements ModelInterface, ArrayAccess
 'device_resolution' => 'getDeviceResolution',
 'game_input' => 'getGameInput',
 'script_id' => 'getScriptId',
-'bit_rate_self_adaption' => 'getBitRateSelfAdaption'    ];
+'bit_rate_self_adaption' => 'getBitRateSelfAdaption',
+'schedule_user_levels' => 'getScheduleUserLevels',
+'ssaid' => 'getSsaid',
+'app_channel' => 'getAppChannel',
+'cloud_init' => 'getCloudInit',
+'sys_device_id' => 'getSysDeviceId'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -219,7 +239,6 @@ class TryToGetSlotFormsStartParam implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['resolution'] = isset($data['resolution']) ? $data['resolution'] : null;
-        $this->container['picture_quality'] = isset($data['picture_quality']) ? $data['picture_quality'] : null;
         $this->container['keep_alive'] = isset($data['keep_alive']) ? $data['keep_alive'] : null;
         $this->container['keep_disconnect_alive'] = isset($data['keep_disconnect_alive']) ? $data['keep_disconnect_alive'] : null;
         $this->container['keep_no_play_alive'] = isset($data['keep_no_play_alive']) ? $data['keep_no_play_alive'] : null;
@@ -231,6 +250,11 @@ class TryToGetSlotFormsStartParam implements ModelInterface, ArrayAccess
         $this->container['game_input'] = isset($data['game_input']) ? $data['game_input'] : null;
         $this->container['script_id'] = isset($data['script_id']) ? $data['script_id'] : null;
         $this->container['bit_rate_self_adaption'] = isset($data['bit_rate_self_adaption']) ? $data['bit_rate_self_adaption'] : null;
+        $this->container['schedule_user_levels'] = isset($data['schedule_user_levels']) ? $data['schedule_user_levels'] : null;
+        $this->container['ssaid'] = isset($data['ssaid']) ? $data['ssaid'] : null;
+        $this->container['app_channel'] = isset($data['app_channel']) ? $data['app_channel'] : null;
+        $this->container['cloud_init'] = isset($data['cloud_init']) ? $data['cloud_init'] : null;
+        $this->container['sys_device_id'] = isset($data['sys_device_id']) ? $data['sys_device_id'] : null;
     }
 
 
@@ -254,30 +278,6 @@ class TryToGetSlotFormsStartParam implements ModelInterface, ArrayAccess
     public function setResolution($resolution)
     {
         $this->container['resolution'] = $resolution;
-
-        return $this;
-    }
-
-    /**
-     * Gets picture_quality
-     *
-     * @return string
-     */
-    public function getPictureQuality()
-    {
-        return $this->container['picture_quality'];
-    }
-
-    /**
-     * Sets picture_quality
-     *
-     * @param string $picture_quality 画质
-     *
-     * @return $this
-     */
-    public function setPictureQuality($picture_quality)
-    {
-        $this->container['picture_quality'] = $picture_quality;
 
         return $this;
     }
@@ -542,6 +542,126 @@ class TryToGetSlotFormsStartParam implements ModelInterface, ArrayAccess
     public function setBitRateSelfAdaption($bit_rate_self_adaption)
     {
         $this->container['bit_rate_self_adaption'] = $bit_rate_self_adaption;
+
+        return $this;
+    }
+
+    /**
+     * Gets schedule_user_levels
+     *
+     * @return string
+     */
+    public function getScheduleUserLevels()
+    {
+        return $this->container['schedule_user_levels'];
+    }
+
+    /**
+     * Sets schedule_user_levels
+     *
+     * @param string $schedule_user_levels 游戏调度实例等级
+     *
+     * @return $this
+     */
+    public function setScheduleUserLevels($schedule_user_levels)
+    {
+        $this->container['schedule_user_levels'] = $schedule_user_levels;
+
+        return $this;
+    }
+
+    /**
+     * Gets ssaid
+     *
+     * @return string
+     */
+    public function getSsaid()
+    {
+        return $this->container['ssaid'];
+    }
+
+    /**
+     * Sets ssaid
+     *
+     * @param string $ssaid 设备号Android
+     *
+     * @return $this
+     */
+    public function setSsaid($ssaid)
+    {
+        $this->container['ssaid'] = $ssaid;
+
+        return $this;
+    }
+
+    /**
+     * Gets app_channel
+     *
+     * @return string
+     */
+    public function getAppChannel()
+    {
+        return $this->container['app_channel'];
+    }
+
+    /**
+     * Sets app_channel
+     *
+     * @param string $app_channel 应用渠道
+     *
+     * @return $this
+     */
+    public function setAppChannel($app_channel)
+    {
+        $this->container['app_channel'] = $app_channel;
+
+        return $this;
+    }
+
+    /**
+     * Gets cloud_init
+     *
+     * @return string
+     */
+    public function getCloudInit()
+    {
+        return $this->container['cloud_init'];
+    }
+
+    /**
+     * Sets cloud_init
+     *
+     * @param string $cloud_init 游戏初始化路径
+     *
+     * @return $this
+     */
+    public function setCloudInit($cloud_init)
+    {
+        $this->container['cloud_init'] = $cloud_init;
+
+        return $this;
+    }
+
+    /**
+     * Gets sys_device_id
+     *
+     * @return string
+     */
+    public function getSysDeviceId()
+    {
+        return $this->container['sys_device_id'];
+    }
+
+    /**
+     * Sets sys_device_id
+     *
+     * @param string $sys_device_id 设备id
+     *
+     * @return $this
+     */
+    public function setSysDeviceId($sys_device_id)
+    {
+        $this->container['sys_device_id'] = $sys_device_id;
 
         return $this;
     }

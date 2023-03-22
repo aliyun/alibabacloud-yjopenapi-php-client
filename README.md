@@ -12,7 +12,7 @@ PHP 5.5 and later
 
 To install the bindings via Composer:
 ```
-composer require alibabacloud/alibabacloud-yjopenapi-php-client 1.0.20230301
+composer require alibabacloud/alibabacloud-yjopenapi-php-client 1.0.20230321
 ```
 
 Then run `composer install`
@@ -91,6 +91,12 @@ try {
  | *DispatchApi* | **setGameHang** | *setGameHangForms*  | *\Yjopenapi\Client\Model\SetGameHangResult* | 设置游戏挂机 |
  | *DispatchApi* | **stopGame** | *stopGameForms*  | *\Yjopenapi\Client\Model\StopGameResult* | 服务端发起，停止某个用户的某个游戏的某个会话 |
  | *DispatchApi* | **tryToGetSlot** | *tryToGetSlotForms*  | *\Yjopenapi\Client\Model\TryToGetSlotResult* | 为用户调度分配游戏容器，容器一旦分配成功会被锁住，一段时间内不再分配给其他用户，过期释放。 |
+ | *InteractiveApi* | **getParty** | *getPartyForms*  | *\Yjopenapi\Client\Model\InteractiveGetPartyResult* | 获取派对 |
+ | *InteractiveApi* | **getPartyStatus** | *getPartyStatusForms*  | *\Yjopenapi\Client\Model\InteractiveGetPartyStatusResult* | 查询派对游戏状态 |
+ | *InteractiveApi* | **joinParty** | *joinPartyForms*  | *\Yjopenapi\Client\Model\InteractiveJoinPartyResult* | 加入分配席位 |
+ | *InteractiveApi* | **kickOutUser** | *kickOutUserForms*  | *\Yjopenapi\Client\Model\InteractiveKickOutUserResult* | 踢出派对 |
+ | *InteractiveApi* | **modifySeats** | *modifySeatsForms*  | *\Yjopenapi\Client\Model\InteractiveModifySeatsResult* | 修改席位 |
+ | *InteractiveApi* | **shutDownParty** | *shutDownPartyForms*  | *\Yjopenapi\Client\Model\InteractiveShutDownPartyResult* | 关闭派对 |
  | *LiveApi* | **queryStatus** | *queryStatusForms*  | *\Yjopenapi\Client\Model\LiveQueryStatusResult* | 查询推流状态 |
  | *LiveApi* | **startGameLive** | *startGameLiveForms*  | *\Yjopenapi\Client\Model\LiveStartGameLiveResult* | 开始直播推流 |
  | *LiveApi* | **stopGameLive** | *stopGameLiveForms*  | *\Yjopenapi\Client\Model\LiveStopGameLiveResult* | 结束直播推流 |
