@@ -12,7 +12,7 @@ PHP 5.5 and later
 
 To install the bindings via Composer:
 ```
-composer require alibabacloud/alibabacloud-yjopenapi-php-client 1.0.20230321
+composer require alibabacloud/alibabacloud-yjopenapi-php-client 1.0.20230410
 ```
 
 Then run `composer install`
@@ -63,6 +63,7 @@ try {
 
 | Api | Method | Params | Result | Description |
 | ------------ | ------------- | ------------- | ------------- | ------------- |
+ | *ConsoleAdminApi* | **activateDeployment** | *activateDeploymentForms*  | *\Yjopenapi\Client\Model\ConsoleAdminActivateDeploymentResult* | 激活已部署成功的游戏版本的部署 |
  | *ConsoleAdminApi* | **adaptGameVersion** | *adaptGameVersionForms*  | *\Yjopenapi\Client\Model\ConsoleAdminAdaptGameVersionResult* | 发起游戏版本适配 |
  | *ConsoleAdminApi* | **addGameToProject** | *addGameToProjectForms*  | *\Yjopenapi\Client\Model\ConsoleAdminAddGameToProjectResult* | 将游戏添加到项目 |
  | *ConsoleAdminApi* | **createGame** | *createGameForms*  | *\Yjopenapi\Client\Model\ConsoleAdminCreateGameResult* | 创建游戏 |
@@ -72,6 +73,9 @@ try {
  | *ConsoleAdminApi* | **deleteProject** | *deleteProjectForms*  | *\Yjopenapi\Client\Model\ConsoleAdminDeleteProjectResult* | 删除指定的项目 |
  | *ConsoleAdminApi* | **getGameVersion** | *getGameVersionForms*  | *\Yjopenapi\Client\Model\ConsoleAdminGetGameVersionResult* | 获取单个游戏版本信息 |
  | *ConsoleAdminApi* | **getGameVersionProgress** | *getGameVersionProgressForms*  | *\Yjopenapi\Client\Model\ConsoleAdminGetGameVersionProgressResult* | 查询版本处理进度（包含上传、适配、部署） |
+ | *ConsoleAdminApi* | **listActivateableInstances** | *listActivateableInstancesForms*  | *\Yjopenapi\Client\Model\ConsoleAdminListActivateableInstancesResult* | 指定项目和游戏版本，获取可激活且可调度的实例及调度配置 |
+ | *ConsoleAdminApi* | **listActivatedInstances** | *listActivatedInstancesForms*  | *\Yjopenapi\Client\Model\ConsoleAdminListActivatedInstancesResult* | 指定项目和游戏，获取已激活版本的可调度实例及调度配置 |
+ | *ConsoleAdminApi* | **listControllersOfGame** | *listControllersOfGameForms*  | *\Yjopenapi\Client\Model\ConsoleAdminListControllersOfGameResult* | 获取单个游戏关联的控制器列表 |
  | *ConsoleAdminApi* | **listDeployableInstances** | *listDeployableInstancesForms*  | *\Yjopenapi\Client\Model\ConsoleAdminListDeployableInstancesResult* | 指定项目和游戏版本，获取可以部署的实例 |
  | *ConsoleAdminApi* | **listGameVersions** | *listGameVersionsForms*  | *\Yjopenapi\Client\Model\ConsoleAdminListGameVersionsResult* | 分页获取游戏版本列表 |
  | *ConsoleAdminApi* | **listGames** | *listGamesForms*  | *\Yjopenapi\Client\Model\ConsoleAdminListGamesResult* | 分页获取游戏列表 |
