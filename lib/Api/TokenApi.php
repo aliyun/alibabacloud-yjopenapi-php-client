@@ -75,6 +75,208 @@ class TokenApi
     }
 
     /**
+     * Operation getPair
+     *
+     *
+     * @throws \Yjopenapi\Client\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Yjopenapi\Client\Model\GetPairResult
+     */
+    public function getPair()
+    {
+        list($response) = $this->getPairWithHttpInfo();
+        return $response;
+    }
+
+    /**
+     * Operation getPairWithHttpInfo
+     *
+     *
+     * @throws \Yjopenapi\Client\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Yjopenapi\Client\Model\GetPairResult, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getPairWithHttpInfo()
+    {
+        $returnType = '\Yjopenapi\Client\Model\GetPairResult';
+        $request = $this->getPairRequest();
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+
+            $content = $responseBody->getContents();
+            if (!in_array($returnType, ['string','integer','bool'])) {
+                $content = json_decode($content);
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yjopenapi\Client\Model\GetPairResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getPairAsync
+     *
+     * 
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getPairAsync()
+    {
+        return $this->getPairAsyncWithHttpInfo()
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getPairAsyncWithHttpInfo
+     *
+     * 
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getPairAsyncWithHttpInfo()
+    {
+        $returnType = '\Yjopenapi\Client\Model\GetPairResult';
+        $request = $this->getPairRequest();
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+
+                    $content = $responseBody->getContents();
+                    if ($returnType !== 'string') {
+                        $content = json_decode($content);
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getPair'
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getPairRequest()
+    {
+
+        $resourcePath = '/sts?type=pair';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+
+        // form params
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json'],
+            []
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        $signHeaders = $this->headerSelector->prepareSignHeader($formParams, $queryParams, 'POST', $this->config);
+
+        $headers = array_merge(
+            ['User-Agent' => 'cgw-client/1.0.0/php'],
+            $signHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getScheme() . '://' . $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getTriple
      *
      *

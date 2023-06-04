@@ -3568,6 +3568,226 @@ class ConsoleAdminApi
     }
 
     /**
+     * Operation listInstancesOfProject
+     *
+     * @param  \Yjopenapi\Client\Model\ConsoleAdminListInstancesOfProjectForms $varForms
+     *
+     * @throws \Yjopenapi\Client\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Yjopenapi\Client\Model\ConsoleAdminListInstancesOfProjectResult
+     */
+    public function listInstancesOfProject($varForms)
+    {
+        list($response) = $this->listInstancesOfProjectWithHttpInfo($varForms);
+        return $response;
+    }
+
+    /**
+     * Operation listInstancesOfProjectWithHttpInfo
+     *
+     * @param  \Yjopenapi\Client\Model\ConsoleAdminListInstancesOfProjectForms $varForms
+     *
+     * @throws \Yjopenapi\Client\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Yjopenapi\Client\Model\ConsoleAdminListInstancesOfProjectResult, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function listInstancesOfProjectWithHttpInfo($varForms)
+    {
+        $returnType = '\Yjopenapi\Client\Model\ConsoleAdminListInstancesOfProjectResult';
+        $request = $this->listInstancesOfProjectRequest($varForms);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+
+            $content = $responseBody->getContents();
+            if (!in_array($returnType, ['string','integer','bool'])) {
+                $content = json_decode($content);
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yjopenapi\Client\Model\ConsoleAdminListInstancesOfProjectResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation listInstancesOfProjectAsync
+     *
+     * 
+     *
+     * @param  \Yjopenapi\Client\Model\ConsoleAdminListInstancesOfProjectForms $varForms
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listInstancesOfProjectAsync($varForms)
+    {
+        return $this->listInstancesOfProjectAsyncWithHttpInfo($varForms)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation listInstancesOfProjectAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  \Yjopenapi\Client\Model\ConsoleAdminListInstancesOfProjectForms $varForms
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listInstancesOfProjectAsyncWithHttpInfo($varForms)
+    {
+        $returnType = '\Yjopenapi\Client\Model\ConsoleAdminListInstancesOfProjectResult';
+        $request = $this->listInstancesOfProjectRequest($varForms);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+
+                    $content = $responseBody->getContents();
+                    if ($returnType !== 'string') {
+                        $content = json_decode($content);
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'listInstancesOfProject'
+     *
+     * @param  \Yjopenapi\Client\Model\ConsoleAdminListInstancesOfProjectForms $varForms
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function listInstancesOfProjectRequest($varForms)
+    {
+        // verify the required parameter 'project_id' is set
+        if ($varForms['project_id'] === null || (is_array($varForms['project_id']) && count($varForms['project_id']) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $varForms[\'project_id\'] when calling listInstancesOfProject'
+            );
+        }
+
+        $resourcePath = '/consoleAdmin/listInstancesOfProject';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+
+        // form params
+        if ($varForms['next_token'] !== null) {
+            $formParams['nextToken'] = ObjectSerializer::toFormValue($varForms['next_token']);
+        }
+        if ($varForms['max_result'] !== null) {
+            $formParams['maxResult'] = ObjectSerializer::toFormValue($varForms['max_result']);
+        }
+        $formParams['projectId'] = ObjectSerializer::toFormValue($varForms['project_id']);
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json'],
+            ['application/x-www-form-urlencoded']
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        $signHeaders = $this->headerSelector->prepareSignHeader($formParams, $queryParams, 'POST', $this->config);
+
+        $headers = array_merge(
+            ['User-Agent' => 'cgw-client/1.0.0/php'],
+            $signHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getScheme() . '://' . $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation listProjects
      *
      * @param  \Yjopenapi\Client\Model\ConsoleAdminListProjectsForms $varForms
