@@ -12,7 +12,7 @@ PHP 5.5 and later
 
 To install the bindings via Composer:
 ```
-composer require alibabacloud/alibabacloud-yjopenapi-php-client 1.0.20230410
+composer require alibabacloud/alibabacloud-yjopenapi-php-client 1.0.20230602
 ```
 
 Then run `composer install`
@@ -79,6 +79,7 @@ try {
  | *ConsoleAdminApi* | **listDeployableInstances** | *listDeployableInstancesForms*  | *\Yjopenapi\Client\Model\ConsoleAdminListDeployableInstancesResult* | 指定项目和游戏版本，获取可以部署的实例 |
  | *ConsoleAdminApi* | **listGameVersions** | *listGameVersionsForms*  | *\Yjopenapi\Client\Model\ConsoleAdminListGameVersionsResult* | 分页获取游戏版本列表 |
  | *ConsoleAdminApi* | **listGames** | *listGamesForms*  | *\Yjopenapi\Client\Model\ConsoleAdminListGamesResult* | 分页获取游戏列表 |
+ | *ConsoleAdminApi* | **listInstancesOfProject** | *listInstancesOfProjectForms*  | *\Yjopenapi\Client\Model\ConsoleAdminListInstancesOfProjectResult* | 分页获取项目中的实例 |
  | *ConsoleAdminApi* | **listProjects** | *listProjectsForms*  | *\Yjopenapi\Client\Model\ConsoleAdminListProjectsResult* | 分页获取项目列表 |
  | *ConsoleAdminApi* | **removeGameFromProject** | *removeGameFromProjectForms*  | *\Yjopenapi\Client\Model\ConsoleAdminRemoveGameFromProjectResult* | 将游戏移出项目 |
  | *ConsoleAdminApi* | **submitDeployment** | *submitDeploymentForms*  | *\Yjopenapi\Client\Model\ConsoleAdminSubmitDeploymentResult* | 提交游戏版本的部署请求 |
@@ -110,6 +111,7 @@ try {
  | *MultiplayApi* | **leave** | *leaveForms*  | *\Yjopenapi\Client\Model\MultiplayLeaveResult* | 离开联机 |
  | *MultiplayApi* | **modify** | *modifyForms*  | *\Yjopenapi\Client\Model\MultiplayModifyResult* | 修改联机 |
  | *MultiplayApi* | **query** | *queryForms*  | *\Yjopenapi\Client\Model\MultiplayQueryResult* | 离开联机 |
+ | *TokenApi* | **getPair** |   | *\Yjopenapi\Client\Model\GetPairResult* | 获取临时安全令牌(二元组) |
  | *TokenApi* | **getTriple** |   | *\Yjopenapi\Client\Model\GetTripleResult* | 获取临时安全令牌 |
  | *UsercontrollerApi* | **deleteGameArchive** | *deleteGameArchiveForms*  | *\Yjopenapi\Client\Model\UsercontollerDeleteGameArchiveResult* | 根据存档id删除存档纪录 |
  | *UsercontrollerApi* | **getGameTrialSurplusDuration** | *getGameTrialSurplusDurationForms*  | *\Yjopenapi\Client\Model\UsercontollerGetGameTrialSurplusDurationResult* | 查询剩余试玩游戏时长 |
