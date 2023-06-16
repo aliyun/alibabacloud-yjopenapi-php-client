@@ -51,7 +51,8 @@ class TryToGetSlotResultModel implements ModelInterface, ArrayAccess
 'account_id' => 'string',
 'code' => 'string',
 'message' => 'string',
-'success' => 'bool'    ];
+'success' => 'bool',
+'slot_data' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -65,7 +66,8 @@ class TryToGetSlotResultModel implements ModelInterface, ArrayAccess
 'account_id' => null,
 'code' => null,
 'message' => null,
-'success' => null    ];
+'success' => null,
+'slot_data' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -100,7 +102,8 @@ class TryToGetSlotResultModel implements ModelInterface, ArrayAccess
 'account_id' => 'accountId',
 'code' => 'code',
 'message' => 'message',
-'success' => 'success'    ];
+'success' => 'success',
+'slot_data' => 'slotData'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -114,7 +117,8 @@ class TryToGetSlotResultModel implements ModelInterface, ArrayAccess
 'account_id' => 'setAccountId',
 'code' => 'setCode',
 'message' => 'setMessage',
-'success' => 'setSuccess'    ];
+'success' => 'setSuccess',
+'slot_data' => 'setSlotData'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -128,7 +132,8 @@ class TryToGetSlotResultModel implements ModelInterface, ArrayAccess
 'account_id' => 'getAccountId',
 'code' => 'getCode',
 'message' => 'getMessage',
-'success' => 'getSuccess'    ];
+'success' => 'getSuccess',
+'slot_data' => 'getSlotData'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -195,6 +200,7 @@ class TryToGetSlotResultModel implements ModelInterface, ArrayAccess
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
         $this->container['success'] = isset($data['success']) ? $data['success'] : null;
+        $this->container['slot_data'] = isset($data['slot_data']) ? $data['slot_data'] : null;
     }
 
 
@@ -362,6 +368,30 @@ class TryToGetSlotResultModel implements ModelInterface, ArrayAccess
     public function setSuccess($success)
     {
         $this->container['success'] = $success;
+
+        return $this;
+    }
+
+    /**
+     * Gets slot_data
+     *
+     * @return string
+     */
+    public function getSlotData()
+    {
+        return $this->container['slot_data'];
+    }
+
+    /**
+     * Sets slot_data
+     *
+     * @param string $slot_data slot_data
+     *
+     * @return $this
+     */
+    public function setSlotData($slot_data)
+    {
+        $this->container['slot_data'] = $slot_data;
 
         return $this;
     }
