@@ -61,7 +61,9 @@ class TryToGetSlotFormsStartParam implements ModelInterface, ArrayAccess
 'ssaid' => 'string',
 'app_channel' => 'string',
 'cloud_init' => 'string',
-'sys_device_id' => 'string'    ];
+'sys_device_id' => 'string',
+'archive_url' => 'string',
+'archive_md5' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -85,7 +87,9 @@ class TryToGetSlotFormsStartParam implements ModelInterface, ArrayAccess
 'ssaid' => null,
 'app_channel' => null,
 'cloud_init' => null,
-'sys_device_id' => null    ];
+'sys_device_id' => null,
+'archive_url' => null,
+'archive_md5' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -130,7 +134,9 @@ class TryToGetSlotFormsStartParam implements ModelInterface, ArrayAccess
 'ssaid' => 'ssaid',
 'app_channel' => 'appChannel',
 'cloud_init' => 'cloudInit',
-'sys_device_id' => 'sysDeviceId'    ];
+'sys_device_id' => 'sysDeviceId',
+'archive_url' => 'archiveUrl',
+'archive_md5' => 'archiveMd5'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -154,7 +160,9 @@ class TryToGetSlotFormsStartParam implements ModelInterface, ArrayAccess
 'ssaid' => 'setSsaid',
 'app_channel' => 'setAppChannel',
 'cloud_init' => 'setCloudInit',
-'sys_device_id' => 'setSysDeviceId'    ];
+'sys_device_id' => 'setSysDeviceId',
+'archive_url' => 'setArchiveUrl',
+'archive_md5' => 'setArchiveMd5'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -178,7 +186,9 @@ class TryToGetSlotFormsStartParam implements ModelInterface, ArrayAccess
 'ssaid' => 'getSsaid',
 'app_channel' => 'getAppChannel',
 'cloud_init' => 'getCloudInit',
-'sys_device_id' => 'getSysDeviceId'    ];
+'sys_device_id' => 'getSysDeviceId',
+'archive_url' => 'getArchiveUrl',
+'archive_md5' => 'getArchiveMd5'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -255,6 +265,8 @@ class TryToGetSlotFormsStartParam implements ModelInterface, ArrayAccess
         $this->container['app_channel'] = isset($data['app_channel']) ? $data['app_channel'] : null;
         $this->container['cloud_init'] = isset($data['cloud_init']) ? $data['cloud_init'] : null;
         $this->container['sys_device_id'] = isset($data['sys_device_id']) ? $data['sys_device_id'] : null;
+        $this->container['archive_url'] = isset($data['archive_url']) ? $data['archive_url'] : null;
+        $this->container['archive_md5'] = isset($data['archive_md5']) ? $data['archive_md5'] : null;
     }
 
 
@@ -662,6 +674,54 @@ class TryToGetSlotFormsStartParam implements ModelInterface, ArrayAccess
     public function setSysDeviceId($sys_device_id)
     {
         $this->container['sys_device_id'] = $sys_device_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets archive_url
+     *
+     * @return string
+     */
+    public function getArchiveUrl()
+    {
+        return $this->container['archive_url'];
+    }
+
+    /**
+     * Sets archive_url
+     *
+     * @param string $archive_url archive_url
+     *
+     * @return $this
+     */
+    public function setArchiveUrl($archive_url)
+    {
+        $this->container['archive_url'] = $archive_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets archive_md5
+     *
+     * @return string
+     */
+    public function getArchiveMd5()
+    {
+        return $this->container['archive_md5'];
+    }
+
+    /**
+     * Sets archive_md5
+     *
+     * @param string $archive_md5 archive_md5
+     *
+     * @return $this
+     */
+    public function setArchiveMd5($archive_md5)
+    {
+        $this->container['archive_md5'] = $archive_md5;
 
         return $this;
     }
