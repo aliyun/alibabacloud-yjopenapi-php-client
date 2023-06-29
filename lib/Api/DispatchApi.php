@@ -2280,6 +2280,9 @@ class DispatchApi
         $formParams['gameSession'] = ObjectSerializer::toFormValue($varForms['game_session']);
         $formParams['appKey'] = ObjectSerializer::toFormValue($varForms['app_key']);
         $formParams['duration'] = ObjectSerializer::toFormValue($varForms['duration']);
+        if ($varForms['kick_in_the_game'] !== null) {
+            $formParams['kickInTheGame'] = ObjectSerializer::toFormValue($varForms['kick_in_the_game']);
+        }
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],

@@ -1,6 +1,6 @@
 <?php
 /**
- * SetGameHangForms
+ * TryToGetSlotResultModelOperators
  *
  * PHP version 5
  *
@@ -23,12 +23,12 @@ use \ArrayAccess;
 use \Yjopenapi\Client\Api\ObjectSerializer;
 
 /**
- * SetGameHangForms Class Doc Comment
+ * TryToGetSlotResultModelOperators Class Doc Comment
  *
  * @category Class
  * @package  Yjopenapi\Client
  */
-class SetGameHangForms implements ModelInterface, ArrayAccess
+class TryToGetSlotResultModelOperators implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -37,7 +37,7 @@ class SetGameHangForms implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $serialModelName = 'SetGameHangForms';
+    protected static $serialModelName = 'TryToGetSlotResultModelOperators';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -45,10 +45,9 @@ class SetGameHangForms implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $serialTypes = [
-        'game_session' => 'string',
-'app_key' => 'string',
-'duration' => 'int',
-'kick_in_the_game' => 'bool'    ];
+        'operator_ip' => 'string',
+'operator_enname' => 'string',
+'operator_cn_name' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -56,10 +55,9 @@ class SetGameHangForms implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $serialFormats = [
-        'game_session' => null,
-'app_key' => null,
-'duration' => 'int64',
-'kick_in_the_game' => null    ];
+        'operator_ip' => null,
+'operator_enname' => null,
+'operator_cn_name' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -88,10 +86,9 @@ class SetGameHangForms implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'game_session' => 'gameSession',
-'app_key' => 'appKey',
-'duration' => 'duration',
-'kick_in_the_game' => 'kickInTheGame'    ];
+        'operator_ip' => 'operatorIp',
+'operator_enname' => 'operatorEnname',
+'operator_cn_name' => 'operatorCnName'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -99,10 +96,9 @@ class SetGameHangForms implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'game_session' => 'setGameSession',
-'app_key' => 'setAppKey',
-'duration' => 'setDuration',
-'kick_in_the_game' => 'setKickInTheGame'    ];
+        'operator_ip' => 'setOperatorIp',
+'operator_enname' => 'setOperatorEnname',
+'operator_cn_name' => 'setOperatorCnName'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -110,10 +106,9 @@ class SetGameHangForms implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'game_session' => 'getGameSession',
-'app_key' => 'getAppKey',
-'duration' => 'getDuration',
-'kick_in_the_game' => 'getKickInTheGame'    ];
+        'operator_ip' => 'getOperatorIp',
+'operator_enname' => 'getOperatorEnname',
+'operator_cn_name' => 'getOperatorCnName'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -173,105 +168,80 @@ class SetGameHangForms implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['game_session'] = isset($data['game_session']) ? $data['game_session'] : null;
-        $this->container['app_key'] = isset($data['app_key']) ? $data['app_key'] : null;
-        $this->container['duration'] = isset($data['duration']) ? $data['duration'] : null;
-        $this->container['kick_in_the_game'] = isset($data['kick_in_the_game']) ? $data['kick_in_the_game'] : null;
+        $this->container['operator_ip'] = isset($data['operator_ip']) ? $data['operator_ip'] : null;
+        $this->container['operator_enname'] = isset($data['operator_enname']) ? $data['operator_enname'] : null;
+        $this->container['operator_cn_name'] = isset($data['operator_cn_name']) ? $data['operator_cn_name'] : null;
     }
 
 
     /**
-     * Gets game_session
+     * Gets operator_ip
      *
      * @return string
      */
-    public function getGameSession()
+    public function getOperatorIp()
     {
-        return $this->container['game_session'];
+        return $this->container['operator_ip'];
     }
 
     /**
-     * Sets game_session
+     * Sets operator_ip
      *
-     * @param string $game_session 会话ID
+     * @param string $operator_ip 运营商IP
      *
      * @return $this
      */
-    public function setGameSession($game_session)
+    public function setOperatorIp($operator_ip)
     {
-        $this->container['game_session'] = $game_session;
+        $this->container['operator_ip'] = $operator_ip;
 
         return $this;
     }
 
     /**
-     * Gets app_key
+     * Gets operator_enname
      *
      * @return string
      */
-    public function getAppKey()
+    public function getOperatorEnname()
     {
-        return $this->container['app_key'];
+        return $this->container['operator_enname'];
     }
 
     /**
-     * Sets app_key
+     * Sets operator_enname
      *
-     * @param string $app_key 项目应用AK
+     * @param string $operator_enname 运营商英文名称
      *
      * @return $this
      */
-    public function setAppKey($app_key)
+    public function setOperatorEnname($operator_enname)
     {
-        $this->container['app_key'] = $app_key;
+        $this->container['operator_enname'] = $operator_enname;
 
         return $this;
     }
 
     /**
-     * Gets duration
+     * Gets operator_cn_name
      *
-     * @return int
+     * @return string
      */
-    public function getDuration()
+    public function getOperatorCnName()
     {
-        return $this->container['duration'];
+        return $this->container['operator_cn_name'];
     }
 
     /**
-     * Sets duration
+     * Sets operator_cn_name
      *
-     * @param int $duration 挂机时长
+     * @param string $operator_cn_name 运营商中文名称
      *
      * @return $this
      */
-    public function setDuration($duration)
+    public function setOperatorCnName($operator_cn_name)
     {
-        $this->container['duration'] = $duration;
-
-        return $this;
-    }
-
-    /**
-     * Gets kick_in_the_game
-     *
-     * @return bool
-     */
-    public function getKickInTheGame()
-    {
-        return $this->container['kick_in_the_game'];
-    }
-
-    /**
-     * Sets kick_in_the_game
-     *
-     * @param bool $kick_in_the_game 是否踢出游戏中用户
-     *
-     * @return $this
-     */
-    public function setKickInTheGame($kick_in_the_game)
-    {
-        $this->container['kick_in_the_game'] = $kick_in_the_game;
+        $this->container['operator_cn_name'] = $operator_cn_name;
 
         return $this;
     }
