@@ -52,7 +52,11 @@ class TryToGetSlotResultModel implements ModelInterface, ArrayAccess
 'code' => 'string',
 'message' => 'string',
 'success' => 'bool',
-'slot_data' => 'string'    ];
+'slot_data' => 'string',
+'country' => 'string',
+'province' => 'string',
+'city' => 'string',
+'operators' => '\Yjopenapi\Client\Model\TryToGetSlotResultModelOperators[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -67,7 +71,11 @@ class TryToGetSlotResultModel implements ModelInterface, ArrayAccess
 'code' => null,
 'message' => null,
 'success' => null,
-'slot_data' => null    ];
+'slot_data' => null,
+'country' => null,
+'province' => null,
+'city' => null,
+'operators' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -103,7 +111,11 @@ class TryToGetSlotResultModel implements ModelInterface, ArrayAccess
 'code' => 'code',
 'message' => 'message',
 'success' => 'success',
-'slot_data' => 'slotData'    ];
+'slot_data' => 'slotData',
+'country' => 'country',
+'province' => 'province',
+'city' => 'city',
+'operators' => 'operators'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -118,7 +130,11 @@ class TryToGetSlotResultModel implements ModelInterface, ArrayAccess
 'code' => 'setCode',
 'message' => 'setMessage',
 'success' => 'setSuccess',
-'slot_data' => 'setSlotData'    ];
+'slot_data' => 'setSlotData',
+'country' => 'setCountry',
+'province' => 'setProvince',
+'city' => 'setCity',
+'operators' => 'setOperators'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -133,7 +149,11 @@ class TryToGetSlotResultModel implements ModelInterface, ArrayAccess
 'code' => 'getCode',
 'message' => 'getMessage',
 'success' => 'getSuccess',
-'slot_data' => 'getSlotData'    ];
+'slot_data' => 'getSlotData',
+'country' => 'getCountry',
+'province' => 'getProvince',
+'city' => 'getCity',
+'operators' => 'getOperators'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -201,6 +221,10 @@ class TryToGetSlotResultModel implements ModelInterface, ArrayAccess
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
         $this->container['success'] = isset($data['success']) ? $data['success'] : null;
         $this->container['slot_data'] = isset($data['slot_data']) ? $data['slot_data'] : null;
+        $this->container['country'] = isset($data['country']) ? $data['country'] : null;
+        $this->container['province'] = isset($data['province']) ? $data['province'] : null;
+        $this->container['city'] = isset($data['city']) ? $data['city'] : null;
+        $this->container['operators'] = isset($data['operators']) ? $data['operators'] : null;
     }
 
 
@@ -385,13 +409,109 @@ class TryToGetSlotResultModel implements ModelInterface, ArrayAccess
     /**
      * Sets slot_data
      *
-     * @param string $slot_data slot_data
+     * @param string $slot_data 调度结果集
      *
      * @return $this
      */
     public function setSlotData($slot_data)
     {
         $this->container['slot_data'] = $slot_data;
+
+        return $this;
+    }
+
+    /**
+     * Gets country
+     *
+     * @return string
+     */
+    public function getCountry()
+    {
+        return $this->container['country'];
+    }
+
+    /**
+     * Sets country
+     *
+     * @param string $country 调度资源所在国家
+     *
+     * @return $this
+     */
+    public function setCountry($country)
+    {
+        $this->container['country'] = $country;
+
+        return $this;
+    }
+
+    /**
+     * Gets province
+     *
+     * @return string
+     */
+    public function getProvince()
+    {
+        return $this->container['province'];
+    }
+
+    /**
+     * Sets province
+     *
+     * @param string $province 调度资源所在省份
+     *
+     * @return $this
+     */
+    public function setProvince($province)
+    {
+        $this->container['province'] = $province;
+
+        return $this;
+    }
+
+    /**
+     * Gets city
+     *
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->container['city'];
+    }
+
+    /**
+     * Sets city
+     *
+     * @param string $city 调度资源所在城市
+     *
+     * @return $this
+     */
+    public function setCity($city)
+    {
+        $this->container['city'] = $city;
+
+        return $this;
+    }
+
+    /**
+     * Gets operators
+     *
+     * @return \Yjopenapi\Client\Model\TryToGetSlotResultModelOperators[]
+     */
+    public function getOperators()
+    {
+        return $this->container['operators'];
+    }
+
+    /**
+     * Sets operators
+     *
+     * @param \Yjopenapi\Client\Model\TryToGetSlotResultModelOperators[] $operators 调度资源运营商信息
+     *
+     * @return $this
+     */
+    public function setOperators($operators)
+    {
+        $this->container['operators'] = $operators;
 
         return $this;
     }
