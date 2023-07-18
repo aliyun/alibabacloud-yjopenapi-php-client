@@ -1,6 +1,6 @@
 <?php
 /**
- * ConsoleAdminListGameVersionsResultModelDataList
+ * ConsoleAdminListGameDeployDetailsOfProjectModelDataList
  *
  * PHP version 5
  *
@@ -23,12 +23,12 @@ use \ArrayAccess;
 use \Yjopenapi\Client\Api\ObjectSerializer;
 
 /**
- * ConsoleAdminListGameVersionsResultModelDataList Class Doc Comment
+ * ConsoleAdminListGameDeployDetailsOfProjectModelDataList Class Doc Comment
  *
  * @category Class
  * @package  Yjopenapi\Client
  */
-class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface, ArrayAccess
+class ConsoleAdminListGameDeployDetailsOfProjectModelDataList implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -37,7 +37,7 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
       *
       * @var string
       */
-    protected static $serialModelName = 'ConsoleAdminListGameVersionsResultModelDataList';
+    protected static $serialModelName = 'ConsoleAdminListGameDeployDetailsOfProjectModelDataList';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -47,8 +47,8 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
     protected static $serialTypes = [
         'version_id' => 'string',
 'version_name' => 'string',
-'adapt_state' => 'string',
-'adapt_finish_time' => 'int'    ];
+'deploy_status' => 'string',
+'auto_active_status' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -58,8 +58,8 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
     protected static $serialFormats = [
         'version_id' => null,
 'version_name' => null,
-'adapt_state' => null,
-'adapt_finish_time' => 'int64'    ];
+'deploy_status' => null,
+'auto_active_status' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -90,8 +90,8 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
     protected static $attributeMap = [
         'version_id' => 'versionId',
 'version_name' => 'versionName',
-'adapt_state' => 'adaptState',
-'adapt_finish_time' => 'adaptFinishTime'    ];
+'deploy_status' => 'deployStatus',
+'auto_active_status' => 'autoActiveStatus'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -101,8 +101,8 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
     protected static $setters = [
         'version_id' => 'setVersionId',
 'version_name' => 'setVersionName',
-'adapt_state' => 'setAdaptState',
-'adapt_finish_time' => 'setAdaptFinishTime'    ];
+'deploy_status' => 'setDeployStatus',
+'auto_active_status' => 'setAutoActiveStatus'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -112,8 +112,8 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
     protected static $getters = [
         'version_id' => 'getVersionId',
 'version_name' => 'getVersionName',
-'adapt_state' => 'getAdaptState',
-'adapt_finish_time' => 'getAdaptFinishTime'    ];
+'deploy_status' => 'getDeployStatus',
+'auto_active_status' => 'getAutoActiveStatus'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -175,8 +175,8 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
     {
         $this->container['version_id'] = isset($data['version_id']) ? $data['version_id'] : null;
         $this->container['version_name'] = isset($data['version_name']) ? $data['version_name'] : null;
-        $this->container['adapt_state'] = isset($data['adapt_state']) ? $data['adapt_state'] : null;
-        $this->container['adapt_finish_time'] = isset($data['adapt_finish_time']) ? $data['adapt_finish_time'] : null;
+        $this->container['deploy_status'] = isset($data['deploy_status']) ? $data['deploy_status'] : null;
+        $this->container['auto_active_status'] = isset($data['auto_active_status']) ? $data['auto_active_status'] : null;
     }
 
 
@@ -193,7 +193,7 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
     /**
      * Sets version_id
      *
-     * @param string $version_id 版本id
+     * @param string $version_id 版本ID
      *
      * @return $this
      */
@@ -229,49 +229,49 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
     }
 
     /**
-     * Gets adapt_state
+     * Gets deploy_status
      *
      * @return string
      */
-    public function getAdaptState()
+    public function getDeployStatus()
     {
-        return $this->container['adapt_state'];
+        return $this->container['deploy_status'];
     }
 
     /**
-     * Sets adapt_state
+     * Sets deploy_status
      *
-     * @param string $adapt_state 适配评测状态
+     * @param string $deploy_status 版本部署状态
      *
      * @return $this
      */
-    public function setAdaptState($adapt_state)
+    public function setDeployStatus($deploy_status)
     {
-        $this->container['adapt_state'] = $adapt_state;
+        $this->container['deploy_status'] = $deploy_status;
 
         return $this;
     }
 
     /**
-     * Gets adapt_finish_time
+     * Gets auto_active_status
      *
-     * @return int
+     * @return string
      */
-    public function getAdaptFinishTime()
+    public function getAutoActiveStatus()
     {
-        return $this->container['adapt_finish_time'];
+        return $this->container['auto_active_status'];
     }
 
     /**
-     * Sets adapt_finish_time
+     * Sets auto_active_status
      *
-     * @param int $adapt_finish_time 适配评测完成时间戳
+     * @param string $auto_active_status 版本待自动激活状态
      *
      * @return $this
      */
-    public function setAdaptFinishTime($adapt_finish_time)
+    public function setAutoActiveStatus($auto_active_status)
     {
-        $this->container['adapt_finish_time'] = $adapt_finish_time;
+        $this->container['auto_active_status'] = $auto_active_status;
 
         return $this;
     }

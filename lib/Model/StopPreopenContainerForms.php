@@ -1,6 +1,6 @@
 <?php
 /**
- * ConsoleAdminListGameVersionsResultModelDataList
+ * StopPreopenContainerForms
  *
  * PHP version 5
  *
@@ -23,12 +23,12 @@ use \ArrayAccess;
 use \Yjopenapi\Client\Api\ObjectSerializer;
 
 /**
- * ConsoleAdminListGameVersionsResultModelDataList Class Doc Comment
+ * StopPreopenContainerForms Class Doc Comment
  *
  * @category Class
  * @package  Yjopenapi\Client
  */
-class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface, ArrayAccess
+class StopPreopenContainerForms implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -37,7 +37,7 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
       *
       * @var string
       */
-    protected static $serialModelName = 'ConsoleAdminListGameVersionsResultModelDataList';
+    protected static $serialModelName = 'StopPreopenContainerForms';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -45,10 +45,8 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
       * @var string[]
       */
     protected static $serialTypes = [
-        'version_id' => 'string',
-'version_name' => 'string',
-'adapt_state' => 'string',
-'adapt_finish_time' => 'int'    ];
+        'app_key' => 'string',
+'game_id' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -56,10 +54,8 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
       * @var string[]
       */
     protected static $serialFormats = [
-        'version_id' => null,
-'version_name' => null,
-'adapt_state' => null,
-'adapt_finish_time' => 'int64'    ];
+        'app_key' => null,
+'game_id' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -88,10 +84,8 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
      * @var string[]
      */
     protected static $attributeMap = [
-        'version_id' => 'versionId',
-'version_name' => 'versionName',
-'adapt_state' => 'adaptState',
-'adapt_finish_time' => 'adaptFinishTime'    ];
+        'app_key' => 'appKey',
+'game_id' => 'gameId'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -99,10 +93,8 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
      * @var string[]
      */
     protected static $setters = [
-        'version_id' => 'setVersionId',
-'version_name' => 'setVersionName',
-'adapt_state' => 'setAdaptState',
-'adapt_finish_time' => 'setAdaptFinishTime'    ];
+        'app_key' => 'setAppKey',
+'game_id' => 'setGameId'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -110,10 +102,8 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
      * @var string[]
      */
     protected static $getters = [
-        'version_id' => 'getVersionId',
-'version_name' => 'getVersionName',
-'adapt_state' => 'getAdaptState',
-'adapt_finish_time' => 'getAdaptFinishTime'    ];
+        'app_key' => 'getAppKey',
+'game_id' => 'getGameId'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -173,105 +163,55 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
      */
     public function __construct(array $data = null)
     {
-        $this->container['version_id'] = isset($data['version_id']) ? $data['version_id'] : null;
-        $this->container['version_name'] = isset($data['version_name']) ? $data['version_name'] : null;
-        $this->container['adapt_state'] = isset($data['adapt_state']) ? $data['adapt_state'] : null;
-        $this->container['adapt_finish_time'] = isset($data['adapt_finish_time']) ? $data['adapt_finish_time'] : null;
+        $this->container['app_key'] = isset($data['app_key']) ? $data['app_key'] : null;
+        $this->container['game_id'] = isset($data['game_id']) ? $data['game_id'] : null;
     }
 
 
     /**
-     * Gets version_id
+     * Gets app_key
      *
      * @return string
      */
-    public function getVersionId()
+    public function getAppKey()
     {
-        return $this->container['version_id'];
+        return $this->container['app_key'];
     }
 
     /**
-     * Sets version_id
+     * Sets app_key
      *
-     * @param string $version_id 版本id
+     * @param string $app_key 项目应用AK
      *
      * @return $this
      */
-    public function setVersionId($version_id)
+    public function setAppKey($app_key)
     {
-        $this->container['version_id'] = $version_id;
+        $this->container['app_key'] = $app_key;
 
         return $this;
     }
 
     /**
-     * Gets version_name
+     * Gets game_id
      *
      * @return string
      */
-    public function getVersionName()
+    public function getGameId()
     {
-        return $this->container['version_name'];
+        return $this->container['game_id'];
     }
 
     /**
-     * Sets version_name
+     * Sets game_id
      *
-     * @param string $version_name 版本名称
+     * @param string $game_id 元境平台游戏ID
      *
      * @return $this
      */
-    public function setVersionName($version_name)
+    public function setGameId($game_id)
     {
-        $this->container['version_name'] = $version_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets adapt_state
-     *
-     * @return string
-     */
-    public function getAdaptState()
-    {
-        return $this->container['adapt_state'];
-    }
-
-    /**
-     * Sets adapt_state
-     *
-     * @param string $adapt_state 适配评测状态
-     *
-     * @return $this
-     */
-    public function setAdaptState($adapt_state)
-    {
-        $this->container['adapt_state'] = $adapt_state;
-
-        return $this;
-    }
-
-    /**
-     * Gets adapt_finish_time
-     *
-     * @return int
-     */
-    public function getAdaptFinishTime()
-    {
-        return $this->container['adapt_finish_time'];
-    }
-
-    /**
-     * Sets adapt_finish_time
-     *
-     * @param int $adapt_finish_time 适配评测完成时间戳
-     *
-     * @return $this
-     */
-    public function setAdaptFinishTime($adapt_finish_time)
-    {
-        $this->container['adapt_finish_time'] = $adapt_finish_time;
+        $this->container['game_id'] = $game_id;
 
         return $this;
     }

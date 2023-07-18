@@ -12,7 +12,7 @@ PHP 5.5 and later
 
 To install the bindings via Composer:
 ```
-composer require alibabacloud/alibabacloud-yjopenapi-php-client 1.0.20230629
+composer require alibabacloud/alibabacloud-yjopenapi-php-client 1.0.20230718
 ```
 
 Then run `composer install`
@@ -77,15 +77,18 @@ try {
  | *ConsoleAdminApi* | **listActivatedInstances** | *listActivatedInstancesForms*  | *\Yjopenapi\Client\Model\ConsoleAdminListActivatedInstancesResult* | 指定项目和游戏，获取已激活版本的可调度实例及调度配置 |
  | *ConsoleAdminApi* | **listControllersOfGame** | *listControllersOfGameForms*  | *\Yjopenapi\Client\Model\ConsoleAdminListControllersOfGameResult* | 获取单个游戏关联的控制器列表 |
  | *ConsoleAdminApi* | **listDeployableInstances** | *listDeployableInstancesForms*  | *\Yjopenapi\Client\Model\ConsoleAdminListDeployableInstancesResult* | 指定项目和游戏版本，获取可以部署的实例 |
+ | *ConsoleAdminApi* | **listGameDeployDetailsOfProject** | *listGameDeployDetailsOfProjectForms*  | *\Yjopenapi\Client\Model\ConsoleAdminListGameDeployDetailsOfProjectResult* | 获取项目下游戏部署版本信息 |
  | *ConsoleAdminApi* | **listGameVersions** | *listGameVersionsForms*  | *\Yjopenapi\Client\Model\ConsoleAdminListGameVersionsResult* | 分页获取游戏版本列表 |
  | *ConsoleAdminApi* | **listGames** | *listGamesForms*  | *\Yjopenapi\Client\Model\ConsoleAdminListGamesResult* | 分页获取游戏列表 |
  | *ConsoleAdminApi* | **listInstancesOfProject** | *listInstancesOfProjectForms*  | *\Yjopenapi\Client\Model\ConsoleAdminListInstancesOfProjectResult* | 分页获取项目中的实例 |
  | *ConsoleAdminApi* | **listProjects** | *listProjectsForms*  | *\Yjopenapi\Client\Model\ConsoleAdminListProjectsResult* | 分页获取项目列表 |
+ | *ConsoleAdminApi* | **listVersionDeployInstances** | *listVersionDeployInstancesForms*  | *\Yjopenapi\Client\Model\ConsoleAdminListVersionDeployInstancesResult* | 获取项目下游戏版本的部署实例信息 |
  | *ConsoleAdminApi* | **removeGameFromProject** | *removeGameFromProjectForms*  | *\Yjopenapi\Client\Model\ConsoleAdminRemoveGameFromProjectResult* | 将游戏移出项目 |
  | *ConsoleAdminApi* | **submitDeployment** | *submitDeploymentForms*  | *\Yjopenapi\Client\Model\ConsoleAdminSubmitDeploymentResult* | 提交游戏版本的部署请求 |
  | *ConsoleAdminApi* | **uploadGameVersionByDownload** | *uploadGameVersionByDownloadForms*  | *\Yjopenapi\Client\Model\ConsoleAdminUploadGameVersionByDownloadResult* | 一键上传：文件上传接口，用远程下载的方式生成新版本 |
  | *DispatchApi* | **batchStopGame** | *batchStopGameForms*  | *\Yjopenapi\Client\Model\BatchStopGameResult* | 游戏下全量踢下线，异步接口 |
  | *DispatchApi* | **cancelGameHang** | *cancelGameHangForms*  | *\Yjopenapi\Client\Model\CancelGameHangResult* | 取消游戏挂机 |
+ | *DispatchApi* | **gameNotify** | *gameNotifyForms*  | *\Yjopenapi\Client\Model\GameNotifyResult* | 游戏通知 |
  | *DispatchApi* | **getGameConcurrency** | *getGameConcurrencyForms*  | *\Yjopenapi\Client\Model\GetGameConcurrencyResult* | 调用GetGameConcurrency获取游戏当前并发数 |
  | *DispatchApi* | **getStock** | *getStockForms*  | *\Yjopenapi\Client\Model\GetStockResult* | 调用GetStock获取游戏当前库存 |
  | *DispatchApi* | **getStopGameToken** | *getStopGameTokenForms*  | *\Yjopenapi\Client\Model\GetStopGameTokenResult* | 全量踢下线获取token |
@@ -95,6 +98,7 @@ try {
  | *DispatchApi* | **setGameAlive** | *setGameAliveForms*  | *\Yjopenapi\Client\Model\SetGameAliveResult* | 设置游戏可运行时长 |
  | *DispatchApi* | **setGameHang** | *setGameHangForms*  | *\Yjopenapi\Client\Model\SetGameHangResult* | 设置游戏挂机 |
  | *DispatchApi* | **stopGame** | *stopGameForms*  | *\Yjopenapi\Client\Model\StopGameResult* | 服务端发起，停止某个用户的某个游戏的某个会话 |
+ | *DispatchApi* | **stopPreopenContainer** | *stopPreopenContainerForms*  | *\Yjopenapi\Client\Model\StopPreopenContainerResult* | 停止预开容器 |
  | *DispatchApi* | **tryToGetSlot** | *tryToGetSlotForms*  | *\Yjopenapi\Client\Model\TryToGetSlotResult* | 为用户调度分配游戏容器，容器一旦分配成功会被锁住，一段时间内不再分配给其他用户，过期释放。 |
  | *InteractiveApi* | **getParty** | *getPartyForms*  | *\Yjopenapi\Client\Model\InteractiveGetPartyResult* | 获取派对 |
  | *InteractiveApi* | **getPartyStatus** | *getPartyStatusForms*  | *\Yjopenapi\Client\Model\InteractiveGetPartyStatusResult* | 查询派对游戏状态 |
