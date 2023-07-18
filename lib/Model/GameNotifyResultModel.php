@@ -1,6 +1,6 @@
 <?php
 /**
- * ConsoleAdminListGameVersionsResultModelDataList
+ * GameNotifyResultModel
  *
  * PHP version 5
  *
@@ -23,12 +23,12 @@ use \ArrayAccess;
 use \Yjopenapi\Client\Api\ObjectSerializer;
 
 /**
- * ConsoleAdminListGameVersionsResultModelDataList Class Doc Comment
+ * GameNotifyResultModel Class Doc Comment
  *
  * @category Class
  * @package  Yjopenapi\Client
  */
-class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface, ArrayAccess
+class GameNotifyResultModel implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -37,7 +37,7 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
       *
       * @var string
       */
-    protected static $serialModelName = 'ConsoleAdminListGameVersionsResultModelDataList';
+    protected static $serialModelName = 'GameNotifyResultModel';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -45,10 +45,10 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
       * @var string[]
       */
     protected static $serialTypes = [
-        'version_id' => 'string',
-'version_name' => 'string',
-'adapt_state' => 'string',
-'adapt_finish_time' => 'int'    ];
+        'game_session' => 'string',
+'success' => 'bool',
+'code' => 'string',
+'message' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -56,10 +56,10 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
       * @var string[]
       */
     protected static $serialFormats = [
-        'version_id' => null,
-'version_name' => null,
-'adapt_state' => null,
-'adapt_finish_time' => 'int64'    ];
+        'game_session' => null,
+'success' => null,
+'code' => null,
+'message' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -88,10 +88,10 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
      * @var string[]
      */
     protected static $attributeMap = [
-        'version_id' => 'versionId',
-'version_name' => 'versionName',
-'adapt_state' => 'adaptState',
-'adapt_finish_time' => 'adaptFinishTime'    ];
+        'game_session' => 'gameSession',
+'success' => 'success',
+'code' => 'code',
+'message' => 'message'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -99,10 +99,10 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
      * @var string[]
      */
     protected static $setters = [
-        'version_id' => 'setVersionId',
-'version_name' => 'setVersionName',
-'adapt_state' => 'setAdaptState',
-'adapt_finish_time' => 'setAdaptFinishTime'    ];
+        'game_session' => 'setGameSession',
+'success' => 'setSuccess',
+'code' => 'setCode',
+'message' => 'setMessage'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -110,10 +110,10 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
      * @var string[]
      */
     protected static $getters = [
-        'version_id' => 'getVersionId',
-'version_name' => 'getVersionName',
-'adapt_state' => 'getAdaptState',
-'adapt_finish_time' => 'getAdaptFinishTime'    ];
+        'game_session' => 'getGameSession',
+'success' => 'getSuccess',
+'code' => 'getCode',
+'message' => 'getMessage'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -173,105 +173,105 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
      */
     public function __construct(array $data = null)
     {
-        $this->container['version_id'] = isset($data['version_id']) ? $data['version_id'] : null;
-        $this->container['version_name'] = isset($data['version_name']) ? $data['version_name'] : null;
-        $this->container['adapt_state'] = isset($data['adapt_state']) ? $data['adapt_state'] : null;
-        $this->container['adapt_finish_time'] = isset($data['adapt_finish_time']) ? $data['adapt_finish_time'] : null;
+        $this->container['game_session'] = isset($data['game_session']) ? $data['game_session'] : null;
+        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
     }
 
 
     /**
-     * Gets version_id
+     * Gets game_session
      *
      * @return string
      */
-    public function getVersionId()
+    public function getGameSession()
     {
-        return $this->container['version_id'];
+        return $this->container['game_session'];
     }
 
     /**
-     * Sets version_id
+     * Sets game_session
      *
-     * @param string $version_id 版本id
+     * @param string $game_session 会话ID
      *
      * @return $this
      */
-    public function setVersionId($version_id)
+    public function setGameSession($game_session)
     {
-        $this->container['version_id'] = $version_id;
+        $this->container['game_session'] = $game_session;
 
         return $this;
     }
 
     /**
-     * Gets version_name
+     * Gets success
      *
-     * @return string
+     * @return bool
      */
-    public function getVersionName()
+    public function getSuccess()
     {
-        return $this->container['version_name'];
+        return $this->container['success'];
     }
 
     /**
-     * Sets version_name
+     * Sets success
      *
-     * @param string $version_name 版本名称
+     * @param bool $success 设置是否成功
      *
      * @return $this
      */
-    public function setVersionName($version_name)
+    public function setSuccess($success)
     {
-        $this->container['version_name'] = $version_name;
+        $this->container['success'] = $success;
 
         return $this;
     }
 
     /**
-     * Gets adapt_state
+     * Gets code
      *
      * @return string
      */
-    public function getAdaptState()
+    public function getCode()
     {
-        return $this->container['adapt_state'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets adapt_state
+     * Sets code
      *
-     * @param string $adapt_state 适配评测状态
+     * @param string $code 错误Code
      *
      * @return $this
      */
-    public function setAdaptState($adapt_state)
+    public function setCode($code)
     {
-        $this->container['adapt_state'] = $adapt_state;
+        $this->container['code'] = $code;
 
         return $this;
     }
 
     /**
-     * Gets adapt_finish_time
+     * Gets message
      *
-     * @return int
+     * @return string
      */
-    public function getAdaptFinishTime()
+    public function getMessage()
     {
-        return $this->container['adapt_finish_time'];
+        return $this->container['message'];
     }
 
     /**
-     * Sets adapt_finish_time
+     * Sets message
      *
-     * @param int $adapt_finish_time 适配评测完成时间戳
+     * @param string $message 错误Message
      *
      * @return $this
      */
-    public function setAdaptFinishTime($adapt_finish_time)
+    public function setMessage($message)
     {
-        $this->container['adapt_finish_time'] = $adapt_finish_time;
+        $this->container['message'] = $message;
 
         return $this;
     }

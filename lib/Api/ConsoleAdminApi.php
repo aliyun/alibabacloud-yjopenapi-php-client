@@ -3135,6 +3135,219 @@ class ConsoleAdminApi
     }
 
     /**
+     * Operation listGameDeployDetailsOfProject
+     *
+     * @param  \Yjopenapi\Client\Model\ConsoleAdminListGameDeployDetailsOfProjectForms $varForms
+     *
+     * @throws \Yjopenapi\Client\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Yjopenapi\Client\Model\ConsoleAdminListGameDeployDetailsOfProjectResult
+     */
+    public function listGameDeployDetailsOfProject($varForms)
+    {
+        list($response) = $this->listGameDeployDetailsOfProjectWithHttpInfo($varForms);
+        return $response;
+    }
+
+    /**
+     * Operation listGameDeployDetailsOfProjectWithHttpInfo
+     *
+     * @param  \Yjopenapi\Client\Model\ConsoleAdminListGameDeployDetailsOfProjectForms $varForms
+     *
+     * @throws \Yjopenapi\Client\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Yjopenapi\Client\Model\ConsoleAdminListGameDeployDetailsOfProjectResult, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function listGameDeployDetailsOfProjectWithHttpInfo($varForms)
+    {
+        $returnType = '\Yjopenapi\Client\Model\ConsoleAdminListGameDeployDetailsOfProjectResult';
+        $request = $this->listGameDeployDetailsOfProjectRequest($varForms);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+
+            $content = $responseBody->getContents();
+            if (!in_array($returnType, ['string','integer','bool'])) {
+                $content = json_decode($content);
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yjopenapi\Client\Model\ConsoleAdminListGameDeployDetailsOfProjectResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation listGameDeployDetailsOfProjectAsync
+     *
+     * 
+     *
+     * @param  \Yjopenapi\Client\Model\ConsoleAdminListGameDeployDetailsOfProjectForms $varForms
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listGameDeployDetailsOfProjectAsync($varForms)
+    {
+        return $this->listGameDeployDetailsOfProjectAsyncWithHttpInfo($varForms)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation listGameDeployDetailsOfProjectAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  \Yjopenapi\Client\Model\ConsoleAdminListGameDeployDetailsOfProjectForms $varForms
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listGameDeployDetailsOfProjectAsyncWithHttpInfo($varForms)
+    {
+        $returnType = '\Yjopenapi\Client\Model\ConsoleAdminListGameDeployDetailsOfProjectResult';
+        $request = $this->listGameDeployDetailsOfProjectRequest($varForms);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+
+                    $content = $responseBody->getContents();
+                    if ($returnType !== 'string') {
+                        $content = json_decode($content);
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'listGameDeployDetailsOfProject'
+     *
+     * @param  \Yjopenapi\Client\Model\ConsoleAdminListGameDeployDetailsOfProjectForms $varForms
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function listGameDeployDetailsOfProjectRequest($varForms)
+    {
+
+        $resourcePath = '/consoleAdmin/listGameDeployDetailsOfProject';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+
+        // form params
+        if ($varForms['project_id'] !== null) {
+            $formParams['projectId'] = ObjectSerializer::toFormValue($varForms['project_id']);
+        }
+        if ($varForms['game_id'] !== null) {
+            $formParams['gameId'] = ObjectSerializer::toFormValue($varForms['game_id']);
+        }
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json'],
+            ['application/x-www-form-urlencoded']
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        $signHeaders = $this->headerSelector->prepareSignHeader($formParams, $queryParams, 'POST', $this->config);
+
+        $headers = array_merge(
+            ['User-Agent' => 'cgw-client/1.0.0/php'],
+            $signHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getScheme() . '://' . $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation listGameVersions
      *
      * @param  \Yjopenapi\Client\Model\ConsoleAdminListGameVersionsForms $varForms
@@ -3964,6 +4177,225 @@ class ConsoleAdminApi
         }
         if ($varForms['max_results'] !== null) {
             $formParams['maxResults'] = ObjectSerializer::toFormValue($varForms['max_results']);
+        }
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json'],
+            ['application/x-www-form-urlencoded']
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        $signHeaders = $this->headerSelector->prepareSignHeader($formParams, $queryParams, 'POST', $this->config);
+
+        $headers = array_merge(
+            ['User-Agent' => 'cgw-client/1.0.0/php'],
+            $signHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getScheme() . '://' . $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation listVersionDeployInstances
+     *
+     * @param  \Yjopenapi\Client\Model\ConsoleAdminListVersionDeployInstancesForms $varForms
+     *
+     * @throws \Yjopenapi\Client\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Yjopenapi\Client\Model\ConsoleAdminListVersionDeployInstancesResult
+     */
+    public function listVersionDeployInstances($varForms)
+    {
+        list($response) = $this->listVersionDeployInstancesWithHttpInfo($varForms);
+        return $response;
+    }
+
+    /**
+     * Operation listVersionDeployInstancesWithHttpInfo
+     *
+     * @param  \Yjopenapi\Client\Model\ConsoleAdminListVersionDeployInstancesForms $varForms
+     *
+     * @throws \Yjopenapi\Client\Api\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Yjopenapi\Client\Model\ConsoleAdminListVersionDeployInstancesResult, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function listVersionDeployInstancesWithHttpInfo($varForms)
+    {
+        $returnType = '\Yjopenapi\Client\Model\ConsoleAdminListVersionDeployInstancesResult';
+        $request = $this->listVersionDeployInstancesRequest($varForms);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+
+            $content = $responseBody->getContents();
+            if (!in_array($returnType, ['string','integer','bool'])) {
+                $content = json_decode($content);
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yjopenapi\Client\Model\ConsoleAdminListVersionDeployInstancesResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation listVersionDeployInstancesAsync
+     *
+     * 
+     *
+     * @param  \Yjopenapi\Client\Model\ConsoleAdminListVersionDeployInstancesForms $varForms
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listVersionDeployInstancesAsync($varForms)
+    {
+        return $this->listVersionDeployInstancesAsyncWithHttpInfo($varForms)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation listVersionDeployInstancesAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  \Yjopenapi\Client\Model\ConsoleAdminListVersionDeployInstancesForms $varForms
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listVersionDeployInstancesAsyncWithHttpInfo($varForms)
+    {
+        $returnType = '\Yjopenapi\Client\Model\ConsoleAdminListVersionDeployInstancesResult';
+        $request = $this->listVersionDeployInstancesRequest($varForms);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+
+                    $content = $responseBody->getContents();
+                    if ($returnType !== 'string') {
+                        $content = json_decode($content);
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'listVersionDeployInstances'
+     *
+     * @param  \Yjopenapi\Client\Model\ConsoleAdminListVersionDeployInstancesForms $varForms
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function listVersionDeployInstancesRequest($varForms)
+    {
+
+        $resourcePath = '/consoleAdmin/listVersionDeployInstances';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+
+        // form params
+        if ($varForms['project_id'] !== null) {
+            $formParams['projectId'] = ObjectSerializer::toFormValue($varForms['project_id']);
+        }
+        if ($varForms['game_id'] !== null) {
+            $formParams['gameId'] = ObjectSerializer::toFormValue($varForms['game_id']);
+        }
+        if ($varForms['version_id'] !== null) {
+            $formParams['versionId'] = ObjectSerializer::toFormValue($varForms['version_id']);
+        }
+        if ($varForms['deploy_status'] !== null) {
+            $formParams['deployStatus'] = ObjectSerializer::toFormValue($varForms['deploy_status']);
         }
 
         $headers = $this->headerSelector->selectHeaders(

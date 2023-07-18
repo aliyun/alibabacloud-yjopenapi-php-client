@@ -1,6 +1,6 @@
 <?php
 /**
- * ConsoleAdminListGameVersionsResultModelDataList
+ * ConsoleAdminListVersionDeployInstancesResult
  *
  * PHP version 5
  *
@@ -23,12 +23,12 @@ use \ArrayAccess;
 use \Yjopenapi\Client\Api\ObjectSerializer;
 
 /**
- * ConsoleAdminListGameVersionsResultModelDataList Class Doc Comment
+ * ConsoleAdminListVersionDeployInstancesResult Class Doc Comment
  *
  * @category Class
  * @package  Yjopenapi\Client
  */
-class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface, ArrayAccess
+class ConsoleAdminListVersionDeployInstancesResult implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -37,7 +37,7 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
       *
       * @var string
       */
-    protected static $serialModelName = 'ConsoleAdminListGameVersionsResultModelDataList';
+    protected static $serialModelName = 'ConsoleAdminListVersionDeployInstancesResult';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -45,10 +45,10 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
       * @var string[]
       */
     protected static $serialTypes = [
-        'version_id' => 'string',
-'version_name' => 'string',
-'adapt_state' => 'string',
-'adapt_finish_time' => 'int'    ];
+        'msg_code' => 'string',
+'msg_info' => 'string',
+'success' => 'bool',
+'model' => '\Yjopenapi\Client\Model\ConsoleAdminListVersionDeployInstancesModel'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -56,10 +56,10 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
       * @var string[]
       */
     protected static $serialFormats = [
-        'version_id' => null,
-'version_name' => null,
-'adapt_state' => null,
-'adapt_finish_time' => 'int64'    ];
+        'msg_code' => null,
+'msg_info' => null,
+'success' => null,
+'model' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -88,10 +88,10 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
      * @var string[]
      */
     protected static $attributeMap = [
-        'version_id' => 'versionId',
-'version_name' => 'versionName',
-'adapt_state' => 'adaptState',
-'adapt_finish_time' => 'adaptFinishTime'    ];
+        'msg_code' => 'msgCode',
+'msg_info' => 'msgInfo',
+'success' => 'success',
+'model' => 'model'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -99,10 +99,10 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
      * @var string[]
      */
     protected static $setters = [
-        'version_id' => 'setVersionId',
-'version_name' => 'setVersionName',
-'adapt_state' => 'setAdaptState',
-'adapt_finish_time' => 'setAdaptFinishTime'    ];
+        'msg_code' => 'setMsgCode',
+'msg_info' => 'setMsgInfo',
+'success' => 'setSuccess',
+'model' => 'setModel'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -110,10 +110,10 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
      * @var string[]
      */
     protected static $getters = [
-        'version_id' => 'getVersionId',
-'version_name' => 'getVersionName',
-'adapt_state' => 'getAdaptState',
-'adapt_finish_time' => 'getAdaptFinishTime'    ];
+        'msg_code' => 'getMsgCode',
+'msg_info' => 'getMsgInfo',
+'success' => 'getSuccess',
+'model' => 'getModel'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -173,105 +173,105 @@ class ConsoleAdminListGameVersionsResultModelDataList implements ModelInterface,
      */
     public function __construct(array $data = null)
     {
-        $this->container['version_id'] = isset($data['version_id']) ? $data['version_id'] : null;
-        $this->container['version_name'] = isset($data['version_name']) ? $data['version_name'] : null;
-        $this->container['adapt_state'] = isset($data['adapt_state']) ? $data['adapt_state'] : null;
-        $this->container['adapt_finish_time'] = isset($data['adapt_finish_time']) ? $data['adapt_finish_time'] : null;
+        $this->container['msg_code'] = isset($data['msg_code']) ? $data['msg_code'] : null;
+        $this->container['msg_info'] = isset($data['msg_info']) ? $data['msg_info'] : null;
+        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
+        $this->container['model'] = isset($data['model']) ? $data['model'] : null;
     }
 
 
     /**
-     * Gets version_id
+     * Gets msg_code
      *
      * @return string
      */
-    public function getVersionId()
+    public function getMsgCode()
     {
-        return $this->container['version_id'];
+        return $this->container['msg_code'];
     }
 
     /**
-     * Sets version_id
+     * Sets msg_code
      *
-     * @param string $version_id 版本id
+     * @param string $msg_code 服务端状态码
      *
      * @return $this
      */
-    public function setVersionId($version_id)
+    public function setMsgCode($msg_code)
     {
-        $this->container['version_id'] = $version_id;
+        $this->container['msg_code'] = $msg_code;
 
         return $this;
     }
 
     /**
-     * Gets version_name
+     * Gets msg_info
      *
      * @return string
      */
-    public function getVersionName()
+    public function getMsgInfo()
     {
-        return $this->container['version_name'];
+        return $this->container['msg_info'];
     }
 
     /**
-     * Sets version_name
+     * Sets msg_info
      *
-     * @param string $version_name 版本名称
+     * @param string $msg_info 服务端描述信息
      *
      * @return $this
      */
-    public function setVersionName($version_name)
+    public function setMsgInfo($msg_info)
     {
-        $this->container['version_name'] = $version_name;
+        $this->container['msg_info'] = $msg_info;
 
         return $this;
     }
 
     /**
-     * Gets adapt_state
+     * Gets success
      *
-     * @return string
+     * @return bool
      */
-    public function getAdaptState()
+    public function getSuccess()
     {
-        return $this->container['adapt_state'];
+        return $this->container['success'];
     }
 
     /**
-     * Sets adapt_state
+     * Sets success
      *
-     * @param string $adapt_state 适配评测状态
+     * @param bool $success 是否成功
      *
      * @return $this
      */
-    public function setAdaptState($adapt_state)
+    public function setSuccess($success)
     {
-        $this->container['adapt_state'] = $adapt_state;
+        $this->container['success'] = $success;
 
         return $this;
     }
 
     /**
-     * Gets adapt_finish_time
+     * Gets model
      *
-     * @return int
+     * @return \Yjopenapi\Client\Model\ConsoleAdminListVersionDeployInstancesModel
      */
-    public function getAdaptFinishTime()
+    public function getModel()
     {
-        return $this->container['adapt_finish_time'];
+        return $this->container['model'];
     }
 
     /**
-     * Sets adapt_finish_time
+     * Sets model
      *
-     * @param int $adapt_finish_time 适配评测完成时间戳
+     * @param \Yjopenapi\Client\Model\ConsoleAdminListVersionDeployInstancesModel $model model
      *
      * @return $this
      */
-    public function setAdaptFinishTime($adapt_finish_time)
+    public function setModel($model)
     {
-        $this->container['adapt_finish_time'] = $adapt_finish_time;
+        $this->container['model'] = $model;
 
         return $this;
     }
