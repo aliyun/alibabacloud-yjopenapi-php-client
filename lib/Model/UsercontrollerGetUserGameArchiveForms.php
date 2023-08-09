@@ -1,6 +1,6 @@
 <?php
 /**
- * StopPreopenContainerForms
+ * UsercontrollerGetUserGameArchiveForms
  *
  * PHP version 5
  *
@@ -23,12 +23,12 @@ use \ArrayAccess;
 use \Yjopenapi\Client\Api\ObjectSerializer;
 
 /**
- * StopPreopenContainerForms Class Doc Comment
+ * UsercontrollerGetUserGameArchiveForms Class Doc Comment
  *
  * @category Class
  * @package  Yjopenapi\Client
  */
-class StopPreopenContainerForms implements ModelInterface, ArrayAccess
+class UsercontrollerGetUserGameArchiveForms implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -37,7 +37,7 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $serialModelName = 'StopPreopenContainerForms';
+    protected static $serialModelName = 'UsercontrollerGetUserGameArchiveForms';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -45,9 +45,9 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $serialTypes = [
-        'app_key' => 'string',
-'game_id' => 'string',
-'number_of_batches' => 'int'    ];
+        'user_id' => 'string',
+'game_id' => 'int',
+'project_id' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -55,9 +55,9 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $serialFormats = [
-        'app_key' => null,
-'game_id' => null,
-'number_of_batches' => 'int32'    ];
+        'user_id' => null,
+'game_id' => 'int64',
+'project_id' => 'int64'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -86,9 +86,9 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'app_key' => 'appKey',
+        'user_id' => 'userId',
 'game_id' => 'gameId',
-'number_of_batches' => 'numberOfBatches'    ];
+'project_id' => 'projectId'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -96,9 +96,9 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'app_key' => 'setAppKey',
+        'user_id' => 'setUserId',
 'game_id' => 'setGameId',
-'number_of_batches' => 'setNumberOfBatches'    ];
+'project_id' => 'setProjectId'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -106,9 +106,9 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'app_key' => 'getAppKey',
+        'user_id' => 'getUserId',
 'game_id' => 'getGameId',
-'number_of_batches' => 'getNumberOfBatches'    ];
+'project_id' => 'getProjectId'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -168,32 +168,32 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['app_key'] = isset($data['app_key']) ? $data['app_key'] : null;
+        $this->container['user_id'] = isset($data['user_id']) ? $data['user_id'] : null;
         $this->container['game_id'] = isset($data['game_id']) ? $data['game_id'] : null;
-        $this->container['number_of_batches'] = isset($data['number_of_batches']) ? $data['number_of_batches'] : null;
+        $this->container['project_id'] = isset($data['project_id']) ? $data['project_id'] : null;
     }
 
 
     /**
-     * Gets app_key
+     * Gets user_id
      *
      * @return string
      */
-    public function getAppKey()
+    public function getUserId()
     {
-        return $this->container['app_key'];
+        return $this->container['user_id'];
     }
 
     /**
-     * Sets app_key
+     * Sets user_id
      *
-     * @param string $app_key 项目应用AK
+     * @param string $user_id 用户id
      *
      * @return $this
      */
-    public function setAppKey($app_key)
+    public function setUserId($user_id)
     {
-        $this->container['app_key'] = $app_key;
+        $this->container['user_id'] = $user_id;
 
         return $this;
     }
@@ -201,7 +201,7 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
     /**
      * Gets game_id
      *
-     * @return string
+     * @return int
      */
     public function getGameId()
     {
@@ -211,7 +211,7 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
     /**
      * Sets game_id
      *
-     * @param string $game_id 元境平台游戏ID
+     * @param int $game_id 游戏Id
      *
      * @return $this
      */
@@ -223,25 +223,25 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets number_of_batches
+     * Gets project_id
      *
      * @return int
      */
-    public function getNumberOfBatches()
+    public function getProjectId()
     {
-        return $this->container['number_of_batches'];
+        return $this->container['project_id'];
     }
 
     /**
-     * Sets number_of_batches
+     * Sets project_id
      *
-     * @param int $number_of_batches 分批数
+     * @param int $project_id 项目ID
      *
      * @return $this
      */
-    public function setNumberOfBatches($number_of_batches)
+    public function setProjectId($project_id)
     {
-        $this->container['number_of_batches'] = $number_of_batches;
+        $this->container['project_id'] = $project_id;
 
         return $this;
     }

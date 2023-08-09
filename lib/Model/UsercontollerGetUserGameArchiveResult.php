@@ -1,6 +1,6 @@
 <?php
 /**
- * StopPreopenContainerForms
+ * UsercontollerGetUserGameArchiveResult
  *
  * PHP version 5
  *
@@ -23,12 +23,12 @@ use \ArrayAccess;
 use \Yjopenapi\Client\Api\ObjectSerializer;
 
 /**
- * StopPreopenContainerForms Class Doc Comment
+ * UsercontollerGetUserGameArchiveResult Class Doc Comment
  *
  * @category Class
  * @package  Yjopenapi\Client
  */
-class StopPreopenContainerForms implements ModelInterface, ArrayAccess
+class UsercontollerGetUserGameArchiveResult implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -37,7 +37,7 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $serialModelName = 'StopPreopenContainerForms';
+    protected static $serialModelName = 'UsercontollerGetUserGameArchiveResult';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -45,9 +45,10 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $serialTypes = [
-        'app_key' => 'string',
-'game_id' => 'string',
-'number_of_batches' => 'int'    ];
+        'msg_code' => 'string',
+'msg_info' => 'string',
+'success' => 'bool',
+'model' => '\Yjopenapi\Client\Model\UsercontollerGetUserGameArchiveResultModel'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -55,9 +56,10 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $serialFormats = [
-        'app_key' => null,
-'game_id' => null,
-'number_of_batches' => 'int32'    ];
+        'msg_code' => null,
+'msg_info' => null,
+'success' => null,
+'model' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -86,9 +88,10 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'app_key' => 'appKey',
-'game_id' => 'gameId',
-'number_of_batches' => 'numberOfBatches'    ];
+        'msg_code' => 'msgCode',
+'msg_info' => 'msgInfo',
+'success' => 'success',
+'model' => 'model'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -96,9 +99,10 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'app_key' => 'setAppKey',
-'game_id' => 'setGameId',
-'number_of_batches' => 'setNumberOfBatches'    ];
+        'msg_code' => 'setMsgCode',
+'msg_info' => 'setMsgInfo',
+'success' => 'setSuccess',
+'model' => 'setModel'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -106,9 +110,10 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'app_key' => 'getAppKey',
-'game_id' => 'getGameId',
-'number_of_batches' => 'getNumberOfBatches'    ];
+        'msg_code' => 'getMsgCode',
+'msg_info' => 'getMsgInfo',
+'success' => 'getSuccess',
+'model' => 'getModel'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -168,80 +173,105 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['app_key'] = isset($data['app_key']) ? $data['app_key'] : null;
-        $this->container['game_id'] = isset($data['game_id']) ? $data['game_id'] : null;
-        $this->container['number_of_batches'] = isset($data['number_of_batches']) ? $data['number_of_batches'] : null;
+        $this->container['msg_code'] = isset($data['msg_code']) ? $data['msg_code'] : null;
+        $this->container['msg_info'] = isset($data['msg_info']) ? $data['msg_info'] : null;
+        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
+        $this->container['model'] = isset($data['model']) ? $data['model'] : null;
     }
 
 
     /**
-     * Gets app_key
+     * Gets msg_code
      *
      * @return string
      */
-    public function getAppKey()
+    public function getMsgCode()
     {
-        return $this->container['app_key'];
+        return $this->container['msg_code'];
     }
 
     /**
-     * Sets app_key
+     * Sets msg_code
      *
-     * @param string $app_key 项目应用AK
+     * @param string $msg_code 服务端状态码
      *
      * @return $this
      */
-    public function setAppKey($app_key)
+    public function setMsgCode($msg_code)
     {
-        $this->container['app_key'] = $app_key;
+        $this->container['msg_code'] = $msg_code;
 
         return $this;
     }
 
     /**
-     * Gets game_id
+     * Gets msg_info
      *
      * @return string
      */
-    public function getGameId()
+    public function getMsgInfo()
     {
-        return $this->container['game_id'];
+        return $this->container['msg_info'];
     }
 
     /**
-     * Sets game_id
+     * Sets msg_info
      *
-     * @param string $game_id 元境平台游戏ID
+     * @param string $msg_info 服务端描述信息
      *
      * @return $this
      */
-    public function setGameId($game_id)
+    public function setMsgInfo($msg_info)
     {
-        $this->container['game_id'] = $game_id;
+        $this->container['msg_info'] = $msg_info;
 
         return $this;
     }
 
     /**
-     * Gets number_of_batches
+     * Gets success
      *
-     * @return int
+     * @return bool
      */
-    public function getNumberOfBatches()
+    public function getSuccess()
     {
-        return $this->container['number_of_batches'];
+        return $this->container['success'];
     }
 
     /**
-     * Sets number_of_batches
+     * Sets success
      *
-     * @param int $number_of_batches 分批数
+     * @param bool $success 是否成功
      *
      * @return $this
      */
-    public function setNumberOfBatches($number_of_batches)
+    public function setSuccess($success)
     {
-        $this->container['number_of_batches'] = $number_of_batches;
+        $this->container['success'] = $success;
+
+        return $this;
+    }
+
+    /**
+     * Gets model
+     *
+     * @return \Yjopenapi\Client\Model\UsercontollerGetUserGameArchiveResultModel
+     */
+    public function getModel()
+    {
+        return $this->container['model'];
+    }
+
+    /**
+     * Sets model
+     *
+     * @param \Yjopenapi\Client\Model\UsercontollerGetUserGameArchiveResultModel $model model
+     *
+     * @return $this
+     */
+    public function setModel($model)
+    {
+        $this->container['model'] = $model;
 
         return $this;
     }
