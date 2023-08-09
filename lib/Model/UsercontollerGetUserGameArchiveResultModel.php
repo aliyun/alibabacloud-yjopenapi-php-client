@@ -1,6 +1,6 @@
 <?php
 /**
- * StopPreopenContainerForms
+ * UsercontollerGetUserGameArchiveResultModel
  *
  * PHP version 5
  *
@@ -23,12 +23,12 @@ use \ArrayAccess;
 use \Yjopenapi\Client\Api\ObjectSerializer;
 
 /**
- * StopPreopenContainerForms Class Doc Comment
+ * UsercontollerGetUserGameArchiveResultModel Class Doc Comment
  *
  * @category Class
  * @package  Yjopenapi\Client
  */
-class StopPreopenContainerForms implements ModelInterface, ArrayAccess
+class UsercontollerGetUserGameArchiveResultModel implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -37,7 +37,7 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $serialModelName = 'StopPreopenContainerForms';
+    protected static $serialModelName = 'UsercontollerGetUserGameArchiveResultModel';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -45,9 +45,10 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $serialTypes = [
-        'app_key' => 'string',
-'game_id' => 'string',
-'number_of_batches' => 'int'    ];
+        'download_url' => 'string',
+'object_md5' => 'string',
+'archive_id' => 'int',
+'model' => '\Yjopenapi\Client\Model\UsercontollerGetUserGameArchiveResultModelModel'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -55,9 +56,10 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $serialFormats = [
-        'app_key' => null,
-'game_id' => null,
-'number_of_batches' => 'int32'    ];
+        'download_url' => null,
+'object_md5' => null,
+'archive_id' => 'int64',
+'model' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -86,9 +88,10 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'app_key' => 'appKey',
-'game_id' => 'gameId',
-'number_of_batches' => 'numberOfBatches'    ];
+        'download_url' => 'downloadUrl',
+'object_md5' => 'objectMD5',
+'archive_id' => 'archiveId',
+'model' => 'model'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -96,9 +99,10 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'app_key' => 'setAppKey',
-'game_id' => 'setGameId',
-'number_of_batches' => 'setNumberOfBatches'    ];
+        'download_url' => 'setDownloadUrl',
+'object_md5' => 'setObjectMd5',
+'archive_id' => 'setArchiveId',
+'model' => 'setModel'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -106,9 +110,10 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'app_key' => 'getAppKey',
-'game_id' => 'getGameId',
-'number_of_batches' => 'getNumberOfBatches'    ];
+        'download_url' => 'getDownloadUrl',
+'object_md5' => 'getObjectMd5',
+'archive_id' => 'getArchiveId',
+'model' => 'getModel'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -168,80 +173,105 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['app_key'] = isset($data['app_key']) ? $data['app_key'] : null;
-        $this->container['game_id'] = isset($data['game_id']) ? $data['game_id'] : null;
-        $this->container['number_of_batches'] = isset($data['number_of_batches']) ? $data['number_of_batches'] : null;
+        $this->container['download_url'] = isset($data['download_url']) ? $data['download_url'] : null;
+        $this->container['object_md5'] = isset($data['object_md5']) ? $data['object_md5'] : null;
+        $this->container['archive_id'] = isset($data['archive_id']) ? $data['archive_id'] : null;
+        $this->container['model'] = isset($data['model']) ? $data['model'] : null;
     }
 
 
     /**
-     * Gets app_key
+     * Gets download_url
      *
      * @return string
      */
-    public function getAppKey()
+    public function getDownloadUrl()
     {
-        return $this->container['app_key'];
+        return $this->container['download_url'];
     }
 
     /**
-     * Sets app_key
+     * Sets download_url
      *
-     * @param string $app_key 项目应用AK
+     * @param string $download_url 下载链接
      *
      * @return $this
      */
-    public function setAppKey($app_key)
+    public function setDownloadUrl($download_url)
     {
-        $this->container['app_key'] = $app_key;
+        $this->container['download_url'] = $download_url;
 
         return $this;
     }
 
     /**
-     * Gets game_id
+     * Gets object_md5
      *
      * @return string
      */
-    public function getGameId()
+    public function getObjectMd5()
     {
-        return $this->container['game_id'];
+        return $this->container['object_md5'];
     }
 
     /**
-     * Sets game_id
+     * Sets object_md5
      *
-     * @param string $game_id 元境平台游戏ID
+     * @param string $object_md5 存档MD5
      *
      * @return $this
      */
-    public function setGameId($game_id)
+    public function setObjectMd5($object_md5)
     {
-        $this->container['game_id'] = $game_id;
+        $this->container['object_md5'] = $object_md5;
 
         return $this;
     }
 
     /**
-     * Gets number_of_batches
+     * Gets archive_id
      *
      * @return int
      */
-    public function getNumberOfBatches()
+    public function getArchiveId()
     {
-        return $this->container['number_of_batches'];
+        return $this->container['archive_id'];
     }
 
     /**
-     * Sets number_of_batches
+     * Sets archive_id
      *
-     * @param int $number_of_batches 分批数
+     * @param int $archive_id 存档ID
      *
      * @return $this
      */
-    public function setNumberOfBatches($number_of_batches)
+    public function setArchiveId($archive_id)
     {
-        $this->container['number_of_batches'] = $number_of_batches;
+        $this->container['archive_id'] = $archive_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets model
+     *
+     * @return \Yjopenapi\Client\Model\UsercontollerGetUserGameArchiveResultModelModel
+     */
+    public function getModel()
+    {
+        return $this->container['model'];
+    }
+
+    /**
+     * Sets model
+     *
+     * @param \Yjopenapi\Client\Model\UsercontollerGetUserGameArchiveResultModelModel $model model
+     *
+     * @return $this
+     */
+    public function setModel($model)
+    {
+        $this->container['model'] = $model;
 
         return $this;
     }

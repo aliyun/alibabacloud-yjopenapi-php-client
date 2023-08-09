@@ -12,7 +12,7 @@ PHP 5.5 and later
 
 To install the bindings via Composer:
 ```
-composer require alibabacloud/alibabacloud-yjopenapi-php-client 1.0.20230718
+composer require alibabacloud/alibabacloud-yjopenapi-php-client 1.0.20230809
 ```
 
 Then run `composer install`
@@ -119,6 +119,7 @@ try {
  | *TokenApi* | **getTriple** |   | *\Yjopenapi\Client\Model\GetTripleResult* | 获取临时安全令牌 |
  | *UsercontrollerApi* | **deleteGameArchive** | *deleteGameArchiveForms*  | *\Yjopenapi\Client\Model\UsercontollerDeleteGameArchiveResult* | 根据存档id删除存档纪录 |
  | *UsercontrollerApi* | **getGameTrialSurplusDuration** | *getGameTrialSurplusDurationForms*  | *\Yjopenapi\Client\Model\UsercontollerGetGameTrialSurplusDurationResult* | 查询剩余试玩游戏时长 |
+ | *UsercontrollerApi* | **getUserGameArchive** | *getUserGameArchiveForms*  | *\Yjopenapi\Client\Model\UsercontollerGetUserGameArchiveResult* | 查询用户正常状态的最新存档纪录，按照存档时间倒序 |
  | *UsercontrollerApi* | **listLatestGameArchive** | *listLatestGameArchiveForms*  | *\Yjopenapi\Client\Model\UsercontollerListLatestGameArchiveResult* | 查询用户正常状态的最新存档纪录，按照存档时间倒序 |
  | *UsercontrollerApi* | **restoreGameArchive** | *restoreGameArchiveForms*  | *\Yjopenapi\Client\Model\UsercontollerRestoreGameArchiveResult* | 将指定的存档ID恢复为最新存档 |
  | *UsercontrollerApi* | **updateGameArchiveTagStatus** | *updateGameArchiveTagStatusForms*  | *\Yjopenapi\Client\Model\UsercontollerUpdateGameArchiveTagStatusResult* | 更新存档打标状态 |

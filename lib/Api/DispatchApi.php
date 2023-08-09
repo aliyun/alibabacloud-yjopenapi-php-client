@@ -2973,6 +2973,9 @@ class DispatchApi
         // form params
         $formParams['appKey'] = ObjectSerializer::toFormValue($varForms['app_key']);
         $formParams['gameId'] = ObjectSerializer::toFormValue($varForms['game_id']);
+        if ($varForms['number_of_batches'] !== null) {
+            $formParams['numberOfBatches'] = ObjectSerializer::toFormValue($varForms['number_of_batches']);
+        }
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],

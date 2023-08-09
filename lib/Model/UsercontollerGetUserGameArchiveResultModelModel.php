@@ -1,6 +1,6 @@
 <?php
 /**
- * StopPreopenContainerForms
+ * UsercontollerGetUserGameArchiveResultModelModel
  *
  * PHP version 5
  *
@@ -23,12 +23,12 @@ use \ArrayAccess;
 use \Yjopenapi\Client\Api\ObjectSerializer;
 
 /**
- * StopPreopenContainerForms Class Doc Comment
+ * UsercontollerGetUserGameArchiveResultModelModel Class Doc Comment
  *
  * @category Class
  * @package  Yjopenapi\Client
  */
-class StopPreopenContainerForms implements ModelInterface, ArrayAccess
+class UsercontollerGetUserGameArchiveResultModelModel implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -37,7 +37,7 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $serialModelName = 'StopPreopenContainerForms';
+    protected static $serialModelName = 'UsercontollerGetUserGameArchiveResultModelModel';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -45,9 +45,11 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $serialTypes = [
-        'app_key' => 'string',
-'game_id' => 'string',
-'number_of_batches' => 'int'    ];
+        'game_id' => 'int',
+'game_session_id' => 'string',
+'tenant_id' => 'int',
+'project_id' => 'int',
+'gmt_create' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -55,9 +57,11 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $serialFormats = [
-        'app_key' => null,
-'game_id' => null,
-'number_of_batches' => 'int32'    ];
+        'game_id' => 'int64',
+'game_session_id' => null,
+'tenant_id' => 'int64',
+'project_id' => 'int64',
+'gmt_create' => 'int64'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -86,9 +90,11 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'app_key' => 'appKey',
-'game_id' => 'gameId',
-'number_of_batches' => 'numberOfBatches'    ];
+        'game_id' => 'gameId',
+'game_session_id' => 'gameSessionId',
+'tenant_id' => 'tenantId',
+'project_id' => 'projectId',
+'gmt_create' => 'gmtCreate'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -96,9 +102,11 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'app_key' => 'setAppKey',
-'game_id' => 'setGameId',
-'number_of_batches' => 'setNumberOfBatches'    ];
+        'game_id' => 'setGameId',
+'game_session_id' => 'setGameSessionId',
+'tenant_id' => 'setTenantId',
+'project_id' => 'setProjectId',
+'gmt_create' => 'setGmtCreate'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -106,9 +114,11 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'app_key' => 'getAppKey',
-'game_id' => 'getGameId',
-'number_of_batches' => 'getNumberOfBatches'    ];
+        'game_id' => 'getGameId',
+'game_session_id' => 'getGameSessionId',
+'tenant_id' => 'getTenantId',
+'project_id' => 'getProjectId',
+'gmt_create' => 'getGmtCreate'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -168,40 +178,18 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['app_key'] = isset($data['app_key']) ? $data['app_key'] : null;
         $this->container['game_id'] = isset($data['game_id']) ? $data['game_id'] : null;
-        $this->container['number_of_batches'] = isset($data['number_of_batches']) ? $data['number_of_batches'] : null;
+        $this->container['game_session_id'] = isset($data['game_session_id']) ? $data['game_session_id'] : null;
+        $this->container['tenant_id'] = isset($data['tenant_id']) ? $data['tenant_id'] : null;
+        $this->container['project_id'] = isset($data['project_id']) ? $data['project_id'] : null;
+        $this->container['gmt_create'] = isset($data['gmt_create']) ? $data['gmt_create'] : null;
     }
 
-
-    /**
-     * Gets app_key
-     *
-     * @return string
-     */
-    public function getAppKey()
-    {
-        return $this->container['app_key'];
-    }
-
-    /**
-     * Sets app_key
-     *
-     * @param string $app_key 项目应用AK
-     *
-     * @return $this
-     */
-    public function setAppKey($app_key)
-    {
-        $this->container['app_key'] = $app_key;
-
-        return $this;
-    }
 
     /**
      * Gets game_id
      *
-     * @return string
+     * @return int
      */
     public function getGameId()
     {
@@ -211,7 +199,7 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
     /**
      * Sets game_id
      *
-     * @param string $game_id 元境平台游戏ID
+     * @param int $game_id 游戏ID
      *
      * @return $this
      */
@@ -223,25 +211,97 @@ class StopPreopenContainerForms implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets number_of_batches
+     * Gets game_session_id
      *
-     * @return int
+     * @return string
      */
-    public function getNumberOfBatches()
+    public function getGameSessionId()
     {
-        return $this->container['number_of_batches'];
+        return $this->container['game_session_id'];
     }
 
     /**
-     * Sets number_of_batches
+     * Sets game_session_id
      *
-     * @param int $number_of_batches 分批数
+     * @param string $game_session_id 游戏会话ID
      *
      * @return $this
      */
-    public function setNumberOfBatches($number_of_batches)
+    public function setGameSessionId($game_session_id)
     {
-        $this->container['number_of_batches'] = $number_of_batches;
+        $this->container['game_session_id'] = $game_session_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets tenant_id
+     *
+     * @return int
+     */
+    public function getTenantId()
+    {
+        return $this->container['tenant_id'];
+    }
+
+    /**
+     * Sets tenant_id
+     *
+     * @param int $tenant_id 租户ID
+     *
+     * @return $this
+     */
+    public function setTenantId($tenant_id)
+    {
+        $this->container['tenant_id'] = $tenant_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets project_id
+     *
+     * @return int
+     */
+    public function getProjectId()
+    {
+        return $this->container['project_id'];
+    }
+
+    /**
+     * Sets project_id
+     *
+     * @param int $project_id 项目ID
+     *
+     * @return $this
+     */
+    public function setProjectId($project_id)
+    {
+        $this->container['project_id'] = $project_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets gmt_create
+     *
+     * @return int
+     */
+    public function getGmtCreate()
+    {
+        return $this->container['gmt_create'];
+    }
+
+    /**
+     * Sets gmt_create
+     *
+     * @param int $gmt_create 存档生成时间
+     *
+     * @return $this
+     */
+    public function setGmtCreate($gmt_create)
+    {
+        $this->container['gmt_create'] = $gmt_create;
 
         return $this;
     }
