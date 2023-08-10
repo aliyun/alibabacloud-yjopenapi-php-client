@@ -45,9 +45,9 @@ class UsercontrollerGetUserGameArchiveForms implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static $serialTypes = [
-        'user_id' => 'string',
-'game_id' => 'int',
-'project_id' => 'int'    ];
+        'account_id' => 'string',
+'game_id' => 'string',
+'project_id' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -55,9 +55,9 @@ class UsercontrollerGetUserGameArchiveForms implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static $serialFormats = [
-        'user_id' => null,
-'game_id' => 'int64',
-'project_id' => 'int64'    ];
+        'account_id' => null,
+'game_id' => null,
+'project_id' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -86,7 +86,7 @@ class UsercontrollerGetUserGameArchiveForms implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $attributeMap = [
-        'user_id' => 'userId',
+        'account_id' => 'accountId',
 'game_id' => 'gameId',
 'project_id' => 'projectId'    ];
 
@@ -96,7 +96,7 @@ class UsercontrollerGetUserGameArchiveForms implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-        'user_id' => 'setUserId',
+        'account_id' => 'setAccountId',
 'game_id' => 'setGameId',
 'project_id' => 'setProjectId'    ];
 
@@ -106,7 +106,7 @@ class UsercontrollerGetUserGameArchiveForms implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $getters = [
-        'user_id' => 'getUserId',
+        'account_id' => 'getAccountId',
 'game_id' => 'getGameId',
 'project_id' => 'getProjectId'    ];
 
@@ -168,32 +168,32 @@ class UsercontrollerGetUserGameArchiveForms implements ModelInterface, ArrayAcce
      */
     public function __construct(array $data = null)
     {
-        $this->container['user_id'] = isset($data['user_id']) ? $data['user_id'] : null;
+        $this->container['account_id'] = isset($data['account_id']) ? $data['account_id'] : null;
         $this->container['game_id'] = isset($data['game_id']) ? $data['game_id'] : null;
         $this->container['project_id'] = isset($data['project_id']) ? $data['project_id'] : null;
     }
 
 
     /**
-     * Gets user_id
+     * Gets account_id
      *
      * @return string
      */
-    public function getUserId()
+    public function getAccountId()
     {
-        return $this->container['user_id'];
+        return $this->container['account_id'];
     }
 
     /**
-     * Sets user_id
+     * Sets account_id
      *
-     * @param string $user_id 用户id
+     * @param string $account_id 用户id
      *
      * @return $this
      */
-    public function setUserId($user_id)
+    public function setAccountId($account_id)
     {
-        $this->container['user_id'] = $user_id;
+        $this->container['account_id'] = $account_id;
 
         return $this;
     }
@@ -201,7 +201,7 @@ class UsercontrollerGetUserGameArchiveForms implements ModelInterface, ArrayAcce
     /**
      * Gets game_id
      *
-     * @return int
+     * @return string
      */
     public function getGameId()
     {
@@ -211,7 +211,7 @@ class UsercontrollerGetUserGameArchiveForms implements ModelInterface, ArrayAcce
     /**
      * Sets game_id
      *
-     * @param int $game_id 游戏Id
+     * @param string $game_id 游戏Id
      *
      * @return $this
      */
@@ -225,7 +225,7 @@ class UsercontrollerGetUserGameArchiveForms implements ModelInterface, ArrayAcce
     /**
      * Gets project_id
      *
-     * @return int
+     * @return string
      */
     public function getProjectId()
     {
@@ -235,7 +235,7 @@ class UsercontrollerGetUserGameArchiveForms implements ModelInterface, ArrayAcce
     /**
      * Sets project_id
      *
-     * @param int $project_id 项目ID
+     * @param string $project_id 项目ID
      *
      * @return $this
      */

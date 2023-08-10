@@ -47,8 +47,7 @@ class UsercontollerGetUserGameArchiveResultModel implements ModelInterface, Arra
     protected static $serialTypes = [
         'download_url' => 'string',
 'object_md5' => 'string',
-'archive_id' => 'int',
-'model' => '\Yjopenapi\Client\Model\UsercontollerGetUserGameArchiveResultModelModel'    ];
+'user_game_archive_dto' => '\Yjopenapi\Client\Model\UsercontollerGetUserGameArchiveResultModelUserGameArchiveDTO'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -58,8 +57,7 @@ class UsercontollerGetUserGameArchiveResultModel implements ModelInterface, Arra
     protected static $serialFormats = [
         'download_url' => null,
 'object_md5' => null,
-'archive_id' => 'int64',
-'model' => null    ];
+'user_game_archive_dto' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -90,8 +88,7 @@ class UsercontollerGetUserGameArchiveResultModel implements ModelInterface, Arra
     protected static $attributeMap = [
         'download_url' => 'downloadUrl',
 'object_md5' => 'objectMD5',
-'archive_id' => 'archiveId',
-'model' => 'model'    ];
+'user_game_archive_dto' => 'userGameArchiveDTO'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -101,8 +98,7 @@ class UsercontollerGetUserGameArchiveResultModel implements ModelInterface, Arra
     protected static $setters = [
         'download_url' => 'setDownloadUrl',
 'object_md5' => 'setObjectMd5',
-'archive_id' => 'setArchiveId',
-'model' => 'setModel'    ];
+'user_game_archive_dto' => 'setUserGameArchiveDto'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -112,8 +108,7 @@ class UsercontollerGetUserGameArchiveResultModel implements ModelInterface, Arra
     protected static $getters = [
         'download_url' => 'getDownloadUrl',
 'object_md5' => 'getObjectMd5',
-'archive_id' => 'getArchiveId',
-'model' => 'getModel'    ];
+'user_game_archive_dto' => 'getUserGameArchiveDto'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -175,8 +170,7 @@ class UsercontollerGetUserGameArchiveResultModel implements ModelInterface, Arra
     {
         $this->container['download_url'] = isset($data['download_url']) ? $data['download_url'] : null;
         $this->container['object_md5'] = isset($data['object_md5']) ? $data['object_md5'] : null;
-        $this->container['archive_id'] = isset($data['archive_id']) ? $data['archive_id'] : null;
-        $this->container['model'] = isset($data['model']) ? $data['model'] : null;
+        $this->container['user_game_archive_dto'] = isset($data['user_game_archive_dto']) ? $data['user_game_archive_dto'] : null;
     }
 
 
@@ -229,49 +223,25 @@ class UsercontollerGetUserGameArchiveResultModel implements ModelInterface, Arra
     }
 
     /**
-     * Gets archive_id
+     * Gets user_game_archive_dto
      *
-     * @return int
+     * @return \Yjopenapi\Client\Model\UsercontollerGetUserGameArchiveResultModelUserGameArchiveDTO
      */
-    public function getArchiveId()
+    public function getUserGameArchiveDto()
     {
-        return $this->container['archive_id'];
+        return $this->container['user_game_archive_dto'];
     }
 
     /**
-     * Sets archive_id
+     * Sets user_game_archive_dto
      *
-     * @param int $archive_id 存档ID
+     * @param \Yjopenapi\Client\Model\UsercontollerGetUserGameArchiveResultModelUserGameArchiveDTO $user_game_archive_dto user_game_archive_dto
      *
      * @return $this
      */
-    public function setArchiveId($archive_id)
+    public function setUserGameArchiveDto($user_game_archive_dto)
     {
-        $this->container['archive_id'] = $archive_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets model
-     *
-     * @return \Yjopenapi\Client\Model\UsercontollerGetUserGameArchiveResultModelModel
-     */
-    public function getModel()
-    {
-        return $this->container['model'];
-    }
-
-    /**
-     * Sets model
-     *
-     * @param \Yjopenapi\Client\Model\UsercontollerGetUserGameArchiveResultModelModel $model model
-     *
-     * @return $this
-     */
-    public function setModel($model)
-    {
-        $this->container['model'] = $model;
+        $this->container['user_game_archive_dto'] = $user_game_archive_dto;
 
         return $this;
     }

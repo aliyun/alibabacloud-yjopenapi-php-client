@@ -1,6 +1,6 @@
 <?php
 /**
- * UsercontollerGetUserGameArchiveResultModelModel
+ * UsercontollerGetUserGameArchiveResultModelUserGameArchiveDTO
  *
  * PHP version 5
  *
@@ -23,12 +23,12 @@ use \ArrayAccess;
 use \Yjopenapi\Client\Api\ObjectSerializer;
 
 /**
- * UsercontollerGetUserGameArchiveResultModelModel Class Doc Comment
+ * UsercontollerGetUserGameArchiveResultModelUserGameArchiveDTO Class Doc Comment
  *
  * @category Class
  * @package  Yjopenapi\Client
  */
-class UsercontollerGetUserGameArchiveResultModelModel implements ModelInterface, ArrayAccess
+class UsercontollerGetUserGameArchiveResultModelUserGameArchiveDTO implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -37,7 +37,7 @@ class UsercontollerGetUserGameArchiveResultModelModel implements ModelInterface,
       *
       * @var string
       */
-    protected static $serialModelName = 'UsercontollerGetUserGameArchiveResultModelModel';
+    protected static $serialModelName = 'UsercontollerGetUserGameArchiveResultModelUserGameArchiveDTO';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -45,10 +45,7 @@ class UsercontollerGetUserGameArchiveResultModelModel implements ModelInterface,
       * @var string[]
       */
     protected static $serialTypes = [
-        'game_id' => 'int',
-'game_session_id' => 'string',
-'tenant_id' => 'int',
-'project_id' => 'int',
+        'game_session_id' => 'string',
 'gmt_create' => 'int'    ];
 
     /**
@@ -57,10 +54,7 @@ class UsercontollerGetUserGameArchiveResultModelModel implements ModelInterface,
       * @var string[]
       */
     protected static $serialFormats = [
-        'game_id' => 'int64',
-'game_session_id' => null,
-'tenant_id' => 'int64',
-'project_id' => 'int64',
+        'game_session_id' => null,
 'gmt_create' => 'int64'    ];
 
     /**
@@ -90,10 +84,7 @@ class UsercontollerGetUserGameArchiveResultModelModel implements ModelInterface,
      * @var string[]
      */
     protected static $attributeMap = [
-        'game_id' => 'gameId',
-'game_session_id' => 'gameSessionId',
-'tenant_id' => 'tenantId',
-'project_id' => 'projectId',
+        'game_session_id' => 'gameSessionId',
 'gmt_create' => 'gmtCreate'    ];
 
     /**
@@ -102,10 +93,7 @@ class UsercontollerGetUserGameArchiveResultModelModel implements ModelInterface,
      * @var string[]
      */
     protected static $setters = [
-        'game_id' => 'setGameId',
-'game_session_id' => 'setGameSessionId',
-'tenant_id' => 'setTenantId',
-'project_id' => 'setProjectId',
+        'game_session_id' => 'setGameSessionId',
 'gmt_create' => 'setGmtCreate'    ];
 
     /**
@@ -114,10 +102,7 @@ class UsercontollerGetUserGameArchiveResultModelModel implements ModelInterface,
      * @var string[]
      */
     protected static $getters = [
-        'game_id' => 'getGameId',
-'game_session_id' => 'getGameSessionId',
-'tenant_id' => 'getTenantId',
-'project_id' => 'getProjectId',
+        'game_session_id' => 'getGameSessionId',
 'gmt_create' => 'getGmtCreate'    ];
 
     /**
@@ -178,37 +163,10 @@ class UsercontollerGetUserGameArchiveResultModelModel implements ModelInterface,
      */
     public function __construct(array $data = null)
     {
-        $this->container['game_id'] = isset($data['game_id']) ? $data['game_id'] : null;
         $this->container['game_session_id'] = isset($data['game_session_id']) ? $data['game_session_id'] : null;
-        $this->container['tenant_id'] = isset($data['tenant_id']) ? $data['tenant_id'] : null;
-        $this->container['project_id'] = isset($data['project_id']) ? $data['project_id'] : null;
         $this->container['gmt_create'] = isset($data['gmt_create']) ? $data['gmt_create'] : null;
     }
 
-
-    /**
-     * Gets game_id
-     *
-     * @return int
-     */
-    public function getGameId()
-    {
-        return $this->container['game_id'];
-    }
-
-    /**
-     * Sets game_id
-     *
-     * @param int $game_id 游戏ID
-     *
-     * @return $this
-     */
-    public function setGameId($game_id)
-    {
-        $this->container['game_id'] = $game_id;
-
-        return $this;
-    }
 
     /**
      * Gets game_session_id
@@ -230,54 +188,6 @@ class UsercontollerGetUserGameArchiveResultModelModel implements ModelInterface,
     public function setGameSessionId($game_session_id)
     {
         $this->container['game_session_id'] = $game_session_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets tenant_id
-     *
-     * @return int
-     */
-    public function getTenantId()
-    {
-        return $this->container['tenant_id'];
-    }
-
-    /**
-     * Sets tenant_id
-     *
-     * @param int $tenant_id 租户ID
-     *
-     * @return $this
-     */
-    public function setTenantId($tenant_id)
-    {
-        $this->container['tenant_id'] = $tenant_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets project_id
-     *
-     * @return int
-     */
-    public function getProjectId()
-    {
-        return $this->container['project_id'];
-    }
-
-    /**
-     * Sets project_id
-     *
-     * @param int $project_id 项目ID
-     *
-     * @return $this
-     */
-    public function setProjectId($project_id)
-    {
-        $this->container['project_id'] = $project_id;
 
         return $this;
     }
