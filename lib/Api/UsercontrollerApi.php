@@ -694,10 +694,10 @@ class UsercontrollerApi
      */
     protected function getUserGameArchiveRequest($varForms)
     {
-        // verify the required parameter 'user_id' is set
-        if ($varForms['user_id'] === null || (is_array($varForms['user_id']) && count($varForms['user_id']) === 0)) {
+        // verify the required parameter 'account_id' is set
+        if ($varForms['account_id'] === null || (is_array($varForms['account_id']) && count($varForms['account_id']) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $varForms[\'user_id\'] when calling getUserGameArchive'
+                'Missing the required parameter $varForms[\'account_id\'] when calling getUserGameArchive'
             );
         }
         // verify the required parameter 'game_id' is set
@@ -720,7 +720,7 @@ class UsercontrollerApi
         $httpBody = '';
 
         // form params
-        $formParams['userId'] = ObjectSerializer::toFormValue($varForms['user_id']);
+        $formParams['accountId'] = ObjectSerializer::toFormValue($varForms['account_id']);
         $formParams['gameId'] = ObjectSerializer::toFormValue($varForms['game_id']);
         $formParams['projectId'] = ObjectSerializer::toFormValue($varForms['project_id']);
 
