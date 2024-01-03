@@ -17,10 +17,10 @@
  *
  */
 
-namespace Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model;
+namespace Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model;
 
 use \ArrayAccess;
-use \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Api\ObjectSerializer;
+use \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Api\ObjectSerializer;
 
 /**
  * MultiplayQueryResultModel Class Doc Comment
@@ -47,10 +47,10 @@ class MultiplayQueryResultModel implements ModelInterface, ArrayAccess
     protected static $serialTypes = [
         'creator_token_id' => 'string',
 'end_ts' => 'int',
-'tokens' => '\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\MultiplayQueryResultModelTokens[]',
+'tokens' => '\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\MultiplayQueryResultModelTokens[]',
 'data_ver' => 'string',
 'mp_id' => 'string',
-'config' => '\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\MultiplayQueryResultModelConfig'    ];
+'config' => '\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\MultiplayQueryResultModelConfig'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -243,7 +243,7 @@ class MultiplayQueryResultModel implements ModelInterface, ArrayAccess
     /**
      * Gets tokens
      *
-     * @return \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\MultiplayQueryResultModelTokens[]
+     * @return \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\MultiplayQueryResultModelTokens[]
      */
     public function getTokens()
     {
@@ -253,7 +253,7 @@ class MultiplayQueryResultModel implements ModelInterface, ArrayAccess
     /**
      * Sets tokens
      *
-     * @param \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\MultiplayQueryResultModelTokens[] $tokens tokens
+     * @param \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\MultiplayQueryResultModelTokens[] $tokens tokens
      *
      * @return $this
      */
@@ -315,7 +315,7 @@ class MultiplayQueryResultModel implements ModelInterface, ArrayAccess
     /**
      * Gets config
      *
-     * @return \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\MultiplayQueryResultModelConfig
+     * @return \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\MultiplayQueryResultModelConfig
      */
     public function getConfig()
     {
@@ -325,7 +325,7 @@ class MultiplayQueryResultModel implements ModelInterface, ArrayAccess
     /**
      * Sets config
      *
-     * @param \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\MultiplayQueryResultModelConfig $config config
+     * @param \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\MultiplayQueryResultModelConfig $config config
      *
      * @return $this
      */
