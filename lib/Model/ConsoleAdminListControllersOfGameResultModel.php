@@ -17,10 +17,10 @@
  *
  */
 
-namespace Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model;
+namespace Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model;
 
 use \ArrayAccess;
-use \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Api\ObjectSerializer;
+use \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Api\ObjectSerializer;
 
 /**
  * ConsoleAdminListControllersOfGameResultModel Class Doc Comment
@@ -47,7 +47,7 @@ class ConsoleAdminListControllersOfGameResultModel implements ModelInterface, Ar
     protected static $serialTypes = [
         'next_token' => 'string',
 'max_results' => 'int',
-'data_list' => '\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\ConsoleAdminListControllersOfGameResultModelDataList[]',
+'data_list' => '\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\ConsoleAdminListControllersOfGameResultModelDataList[]',
 'count' => 'int'    ];
 
     /**
@@ -231,7 +231,7 @@ class ConsoleAdminListControllersOfGameResultModel implements ModelInterface, Ar
     /**
      * Gets data_list
      *
-     * @return \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\ConsoleAdminListControllersOfGameResultModelDataList[]
+     * @return \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\ConsoleAdminListControllersOfGameResultModelDataList[]
      */
     public function getDataList()
     {
@@ -241,7 +241,7 @@ class ConsoleAdminListControllersOfGameResultModel implements ModelInterface, Ar
     /**
      * Sets data_list
      *
-     * @param \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\ConsoleAdminListControllersOfGameResultModelDataList[] $data_list data_list
+     * @param \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\ConsoleAdminListControllersOfGameResultModelDataList[] $data_list data_list
      *
      * @return $this
      */
