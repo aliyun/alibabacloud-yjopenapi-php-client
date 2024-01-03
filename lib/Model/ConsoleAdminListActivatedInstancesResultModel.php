@@ -17,10 +17,10 @@
  *
  */
 
-namespace Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model;
+namespace Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model;
 
 use \ArrayAccess;
-use \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Api\ObjectSerializer;
+use \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Api\ObjectSerializer;
 
 /**
  * ConsoleAdminListActivatedInstancesResultModel Class Doc Comment
@@ -45,7 +45,7 @@ class ConsoleAdminListActivatedInstancesResultModel implements ModelInterface, A
       * @var string[]
       */
     protected static $serialTypes = [
-        'data_list' => '\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\ConsoleAdminListActivatedInstancesResultModelDataList[]',
+        'data_list' => '\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\ConsoleAdminListActivatedInstancesResultModelDataList[]',
 'count' => 'int'    ];
 
     /**
@@ -171,7 +171,7 @@ class ConsoleAdminListActivatedInstancesResultModel implements ModelInterface, A
     /**
      * Gets data_list
      *
-     * @return \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\ConsoleAdminListActivatedInstancesResultModelDataList[]
+     * @return \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\ConsoleAdminListActivatedInstancesResultModelDataList[]
      */
     public function getDataList()
     {
@@ -181,7 +181,7 @@ class ConsoleAdminListActivatedInstancesResultModel implements ModelInterface, A
     /**
      * Sets data_list
      *
-     * @param \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\ConsoleAdminListActivatedInstancesResultModelDataList[] $data_list data_list
+     * @param \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\ConsoleAdminListActivatedInstancesResultModelDataList[] $data_list data_list
      *
      * @return $this
      */
