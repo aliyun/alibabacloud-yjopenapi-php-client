@@ -17,10 +17,10 @@
  *
  */
 
-namespace Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model;
+namespace Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model;
 
 use \ArrayAccess;
-use \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Api\ObjectSerializer;
+use \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Api\ObjectSerializer;
 
 /**
  * GetGameConcurrencyResultModel Class Doc Comment
@@ -47,7 +47,7 @@ class GetGameConcurrencyResultModel implements ModelInterface, ArrayAccess
     protected static $serialTypes = [
         'game_id' => 'string',
 'current_time' => 'int',
-'playing_region_list' => '\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\GetGameConcurrencyResultModelPlayingRegionList[]',
+'playing_region_list' => '\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\GetGameConcurrencyResultModelPlayingRegionList[]',
 'code' => 'string',
 'playing_total' => 'int',
 'success' => 'bool',
@@ -261,7 +261,7 @@ class GetGameConcurrencyResultModel implements ModelInterface, ArrayAccess
     /**
      * Gets playing_region_list
      *
-     * @return \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\GetGameConcurrencyResultModelPlayingRegionList[]
+     * @return \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\GetGameConcurrencyResultModelPlayingRegionList[]
      */
     public function getPlayingRegionList()
     {
@@ -271,7 +271,7 @@ class GetGameConcurrencyResultModel implements ModelInterface, ArrayAccess
     /**
      * Sets playing_region_list
      *
-     * @param \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\GetGameConcurrencyResultModelPlayingRegionList[] $playing_region_list 当前游戏region维度游戏中人数统计
+     * @param \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\GetGameConcurrencyResultModelPlayingRegionList[] $playing_region_list 当前游戏region维度游戏中人数统计
      *
      * @return $this
      */
