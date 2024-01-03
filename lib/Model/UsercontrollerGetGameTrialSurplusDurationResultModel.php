@@ -17,10 +17,10 @@
  *
  */
 
-namespace Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model;
+namespace Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model;
 
 use \ArrayAccess;
-use \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Api\ObjectSerializer;
+use \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Api\ObjectSerializer;
 
 /**
  * UsercontrollerGetGameTrialSurplusDurationResultModel Class Doc Comment
@@ -45,7 +45,7 @@ class UsercontrollerGetGameTrialSurplusDurationResultModel implements ModelInter
       * @var string[]
       */
     protected static $serialTypes = [
-        'trial_policy_responses' => '\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\UsercontrollerGetGameTrialSurplusDurationResultModelTrialPolicyResponses[]'    ];
+        'trial_policy_responses' => '\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\UsercontrollerGetGameTrialSurplusDurationResultModelTrialPolicyResponses[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -165,7 +165,7 @@ class UsercontrollerGetGameTrialSurplusDurationResultModel implements ModelInter
     /**
      * Gets trial_policy_responses
      *
-     * @return \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\UsercontrollerGetGameTrialSurplusDurationResultModelTrialPolicyResponses[]
+     * @return \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\UsercontrollerGetGameTrialSurplusDurationResultModelTrialPolicyResponses[]
      */
     public function getTrialPolicyResponses()
     {
@@ -175,7 +175,7 @@ class UsercontrollerGetGameTrialSurplusDurationResultModel implements ModelInter
     /**
      * Sets trial_policy_responses
      *
-     * @param \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\UsercontrollerGetGameTrialSurplusDurationResultModelTrialPolicyResponses[] $trial_policy_responses trial_policy_responses
+     * @param \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\UsercontrollerGetGameTrialSurplusDurationResultModelTrialPolicyResponses[] $trial_policy_responses trial_policy_responses
      *
      * @return $this
      */
