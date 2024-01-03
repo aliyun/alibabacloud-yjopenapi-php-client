@@ -17,10 +17,10 @@
  *
  */
 
-namespace Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model;
+namespace Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model;
 
 use \ArrayAccess;
-use \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Api\ObjectSerializer;
+use \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Api\ObjectSerializer;
 
 /**
  * MultiplayInitForms Class Doc Comment
@@ -47,8 +47,8 @@ class MultiplayInitForms implements ModelInterface, ArrayAccess
     protected static $serialTypes = [
         'game_session' => 'string',
 'app_key' => 'string',
-'config' => '\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\MultiplayInitFormsConfig',
-'tokens' => '\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\MultiplayInitFormsTokens[]'    ];
+'config' => '\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\MultiplayInitFormsConfig',
+'tokens' => '\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\MultiplayInitFormsTokens[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -231,7 +231,7 @@ class MultiplayInitForms implements ModelInterface, ArrayAccess
     /**
      * Gets config
      *
-     * @return \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\MultiplayInitFormsConfig
+     * @return \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\MultiplayInitFormsConfig
      */
     public function getConfig()
     {
@@ -241,7 +241,7 @@ class MultiplayInitForms implements ModelInterface, ArrayAccess
     /**
      * Sets config
      *
-     * @param \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\MultiplayInitFormsConfig $config config
+     * @param \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\MultiplayInitFormsConfig $config config
      *
      * @return $this
      */
@@ -255,7 +255,7 @@ class MultiplayInitForms implements ModelInterface, ArrayAccess
     /**
      * Gets tokens
      *
-     * @return \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\MultiplayInitFormsTokens[]
+     * @return \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\MultiplayInitFormsTokens[]
      */
     public function getTokens()
     {
@@ -265,7 +265,7 @@ class MultiplayInitForms implements ModelInterface, ArrayAccess
     /**
      * Sets tokens
      *
-     * @param \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\MultiplayInitFormsTokens[] $tokens tokens
+     * @param \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\MultiplayInitFormsTokens[] $tokens tokens
      *
      * @return $this
      */
