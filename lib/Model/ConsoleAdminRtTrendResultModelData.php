@@ -17,10 +17,10 @@
  *
  */
 
-namespace Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model;
+namespace Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model;
 
 use \ArrayAccess;
-use \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Api\ObjectSerializer;
+use \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Api\ObjectSerializer;
 
 /**
  * ConsoleAdminRtTrendResultModelData Class Doc Comment
@@ -45,7 +45,7 @@ class ConsoleAdminRtTrendResultModelData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $serialTypes = [
-        'data' => '\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\ConsoleAdminRtTrendResultModelDataData[]',
+        'data' => '\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\ConsoleAdminRtTrendResultModelDataData[]',
 'indicator_type' => 'string',
 'max_value' => 'string',
 'name' => 'string'    ];
@@ -183,7 +183,7 @@ class ConsoleAdminRtTrendResultModelData implements ModelInterface, ArrayAccess
     /**
      * Gets data
      *
-     * @return \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\ConsoleAdminRtTrendResultModelDataData[]
+     * @return \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\ConsoleAdminRtTrendResultModelDataData[]
      */
     public function getData()
     {
@@ -193,7 +193,7 @@ class ConsoleAdminRtTrendResultModelData implements ModelInterface, ArrayAccess
     /**
      * Sets data
      *
-     * @param \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\ConsoleAdminRtTrendResultModelDataData[] $data data
+     * @param \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\ConsoleAdminRtTrendResultModelDataData[] $data data
      *
      * @return $this
      */
