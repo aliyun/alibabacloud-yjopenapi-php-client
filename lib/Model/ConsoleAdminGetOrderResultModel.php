@@ -17,10 +17,10 @@
  *
  */
 
-namespace Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model;
+namespace Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model;
 
 use \ArrayAccess;
-use \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Api\ObjectSerializer;
+use \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Api\ObjectSerializer;
 
 /**
  * ConsoleAdminGetOrderResultModel Class Doc Comment
@@ -47,7 +47,7 @@ class ConsoleAdminGetOrderResultModel implements ModelInterface, ArrayAccess
     protected static $serialTypes = [
         'order_type' => 'string',
 'order_id' => 'string',
-'attribute_list' => '\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\ConsoleAdminGetOrderResultModelAttributeList[]',
+'attribute_list' => '\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\ConsoleAdminGetOrderResultModelAttributeList[]',
 'charge_type' => 'string',
 'discount_amount' => 'int',
 'credit_pay_amount' => 'int',
@@ -447,7 +447,7 @@ class ConsoleAdminGetOrderResultModel implements ModelInterface, ArrayAccess
     /**
      * Gets attribute_list
      *
-     * @return \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\ConsoleAdminGetOrderResultModelAttributeList[]
+     * @return \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\ConsoleAdminGetOrderResultModelAttributeList[]
      */
     public function getAttributeList()
     {
@@ -457,7 +457,7 @@ class ConsoleAdminGetOrderResultModel implements ModelInterface, ArrayAccess
     /**
      * Sets attribute_list
      *
-     * @param \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\ConsoleAdminGetOrderResultModelAttributeList[] $attribute_list 配置详情
+     * @param \Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Yjopenapi\Client\Model\ConsoleAdminGetOrderResultModelAttributeList[] $attribute_list 配置详情
      *
      * @return $this
      */
